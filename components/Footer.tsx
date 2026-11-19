@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { communities } from "@/lib/communities";
 import { nav, site } from "@/lib/site";
-import { EqualHousing, IconAgentBadge } from "@/components/ui";
+import { EqualHousing, IconAgentBadge, Tagline } from "@/components/ui";
 
 export function Footer() {
   return (
@@ -13,6 +13,9 @@ export function Footer() {
             <Image src="/logo-icon-trim.png" alt="" width={649} height={580} className="h-16 w-auto" />
           </Link>
           <p className="mt-4 font-display text-2xl">Malik Group</p>
+          <div className="mt-2">
+            <Tagline tone="light" compact />
+          </div>
           <p className="mt-2 text-sm leading-relaxed text-white/85">
             {site.agent}
             <br />

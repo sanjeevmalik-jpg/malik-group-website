@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Container, CtaLinks, IconAgentBadge, Portrait } from "@/components/ui";
+import { Container, CtaLinks, IconAgentBadge, Portrait, Tagline } from "@/components/ui";
 import { communities } from "@/lib/communities";
 import { pageMeta } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -47,6 +47,7 @@ export default function HomePage() {
             >
               {site.phoneDisplay}
             </a>
+            <Tagline className="mt-3" />
             <div className="mt-4 flex justify-center">
               <IconAgentBadge className="h-12 w-auto sm:h-14" />
             </div>

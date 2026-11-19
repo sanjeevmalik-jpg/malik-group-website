@@ -139,6 +139,30 @@ export function Portrait({
   );
 }
 
+export function Tagline({
+  tone = "navy",
+  className = "",
+  compact = false,
+}: {
+  tone?: "navy" | "light";
+  className?: string;
+  compact?: boolean;
+}) {
+  const words = ["Experience", "Integrity", "Results"];
+  const color = tone === "light" ? "text-white/90" : "text-navy";
+  const tracking = compact ? "tracking-[0.14em] text-[0.7rem]" : "tracking-[0.22em] text-xs sm:text-sm";
+  return (
+    <p className={`font-semibold uppercase ${tracking} ${color} ${className}`}>
+      {words.map((word, index) => (
+        <span key={word}>
+          {word}
+          <span className="text-orange">{index < words.length - 1 ? ". " : "."}</span>
+        </span>
+      ))}
+    </p>
+  );
+}
+
 export function IconAgentBadge({ className = "" }: { className?: string }) {
   return (
     <Image
