@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Source_Sans_3 } from "next/font/google";
+import { Source_Sans_3, Source_Serif_4 } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MobileContactBar } from "@/components/MobileContactBar";
@@ -8,10 +8,10 @@ import { siteAgentSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-fraunces",
+  variable: "--font-source-serif",
 });
 
 const sourceSans = Source_Sans_3({
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${sourceSans.variable} h-full antialiased`}>
+      <html lang="en" className={`${sourceSerif.variable} ${sourceSans.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col pb-[calc(4.75rem+env(safe-area-inset-bottom))] md:pb-0">
         <JsonLd data={siteAgentSchema} />
         <Header />

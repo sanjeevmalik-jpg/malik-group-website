@@ -2,7 +2,7 @@
 
 @theme inline {
   --font-sans: var(--font-source), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-display: var(--font-source-serif), Georgia, "Times New Roman", serif;
   --color-navy: #1a365d;
   --color-navy-deep: #10243f;
   --color-ink: #1c2838;
@@ -35,8 +35,15 @@
 
   h1,
   h2,
-  h3 {
+  h3,
+  .font-display {
     font-family: var(--font-display);
+    font-feature-settings: "swsh" 0, "salt" 0, "ss01" 0;
+  }
+
+  h1,
+  h2,
+  h3 {
     color: var(--color-navy);
   }
 
