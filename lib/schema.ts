@@ -31,7 +31,7 @@ export const indianAgentSchema = {
   image: `${site.url}${site.portrait.src}`,
   award: site.iconAgent.label,
   telephone: "+1-321-297-3009",
-  email: "sanjeev.malik@exprealty.com",
+  email: site.email,
   jobTitle: "Broker Associate",
   description:
     "Indian realtor in Orlando and Central Florida. Broker Associate with eXp Realty. Helps families buy and sell in English, Hindi, Punjabi, and Urdu.",
@@ -111,7 +111,7 @@ export const indianFaqSchema = {
       name: "How do I start a home search or find out what my home is worth?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "You can search homes at https://sanjeevmalik.com/property-search/, request a home value at https://sanjeevmalik.exprealty.com/seller/valuation/, or call or text Sanjeev at (321) 297-3009. You can also email sanjeev.malik@exprealty.com.",
+        text: `You can search homes at https://sanjeevmalik.com/property-search/, request a home value at https://sanjeevmalik.exprealty.com/seller/valuation/, or call or text Sanjeev at (321) 297-3009. You can also email ${site.email}.`,
       },
     },
   ],

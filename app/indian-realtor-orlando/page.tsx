@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     q: "How do I start a home search or find out what my home is worth?",
-    a: "You can search homes now, request a home value, or call or text Sanjeev at (321) 297-3009. You can also email sanjeev.malik@exprealty.com.",
+    a: `You can search homes now, request a home value, or call or text Sanjeev at (321) 297-3009. You can also email ${site.email}.`,
   },
 ];
 
@@ -212,8 +212,8 @@ export default function IndianRealtorPage() {
               (321) 297-3009
             </a>
             , or email{" "}
-            <a href="mailto:sanjeev.malik@exprealty.com" className="font-semibold text-navy underline">
-              sanjeev.malik@exprealty.com
+            <a href={`mailto:${site.email}`} className="font-semibold text-navy underline">
+              {site.email}
             </a>
             .
           </p>
@@ -234,8 +234,8 @@ export default function IndianRealtorPage() {
               (321) 297-3009
             </a>
             <br />
-            <a href="mailto:sanjeev.malik@exprealty.com" className="underline">
-              sanjeev.malik@exprealty.com
+            <a href={`mailto:${site.email}`} className="underline">
+              {site.email}
             </a>
           </p>
           <CtaLinks className="mt-6" searchLabel="Search Homes" valueLabel="What’s My Home Worth" />

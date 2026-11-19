@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 export const metadata = pageMeta({
   title: "Contact Sanjeev Malik",
   description:
-    "Call (321) 297-3009 or email sanjeev.malik@exprealty.com. Send a note to Sanjeev Malik, Broker Associate with eXp Realty.",
+    `Call (321) 297-3009 or email ${site.email}. Send a note to Sanjeev Malik, Broker Associate with eXp Realty.`,
   path: "/contact",
 });
 
