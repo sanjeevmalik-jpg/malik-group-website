@@ -1,5 +1,5 @@
 import { LeadForm } from "@/components/LeadForm";
-import { Container, PageHero, Portrait } from "@/components/ui";
+import { Container, PageHero, Portrait, ReachSanjeev } from "@/components/ui";
 import { pageMeta } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -20,6 +20,7 @@ export default function ContactPage() {
       </PageHero>
       <Container className="grid gap-10 py-12 lg:grid-cols-[0.8fr_1.2fr] lg:py-16">
         <div className="space-y-6">
+          <ReachSanjeev />
           <Portrait className="mx-auto w-full max-w-sm" />
           <div className="rounded-3xl bg-white p-6">
             <h2 className="text-2xl text-navy">Phone</h2>

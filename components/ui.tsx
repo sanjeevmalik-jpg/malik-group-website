@@ -29,6 +29,51 @@ export function JsonLd({ data }: { data: unknown }) {
   );
 }
 
+function PhoneIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M7.5 3.75h2.1c.4 0 .75.28.84.67l.7 3.02a.9.9 0 0 1-.24.86L9.4 9.8a12.1 12.1 0 0 0 4.8 4.8l1.5-1.5a.9.9 0 0 1 .86-.24l3.02.7c.39.09.67.44.67.84v2.1c0 .5-.4.9-.9.9A14.1 14.1 0 0 1 6.6 4.65c0-.5.4-.9.9-.9Z"
+      />
+    </svg>
+  );
+}
+
+function ChatIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M5 5.5A2.5 2.5 0 0 1 7.5 3h9A2.5 2.5 0 0 1 19 5.5v7A2.5 2.5 0 0 1 16.5 15H10l-3.6 2.7c-.5.4-1.2 0-1.2-.6V15h-.2A2.5 2.5 0 0 1 5 12.5v-7Z"
+      />
+    </svg>
+  );
+}
+
+export function ReachSanjeev({ className = "" }: { className?: string }) {
+  return (
+    <div className={`grid grid-cols-2 gap-2 ${className}`}>
+      <a
+        href={site.phoneTel}
+        aria-label="Call Sanjeev at (321) 297-3009"
+        className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-navy px-3 text-center text-base font-semibold text-white"
+      >
+        <PhoneIcon />
+        Call Sanjeev
+      </a>
+      <a
+        href={site.smsTel}
+        aria-label="Text Sanjeev at (321) 297-3009"
+        className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-orange-deep px-3 text-center text-base font-semibold text-white"
+      >
+        <ChatIcon />
+        Text Sanjeev
+      </a>
+    </div>
+  );
+}
+
 export function CtaLinks({
   searchLabel = "Search Homes",
   valueLabel = "What’s my home worth",

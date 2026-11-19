@@ -7,6 +7,7 @@ export const site = {
   license: "BK3313715",
   phoneDisplay: "(321) 297-3009",
   phoneTel: "tel:+13212973009",
+  smsTel: "sms:+13212973009",
   email: "sanjeev.malik@exprealty.com",
   searchUrl: "https://sanjeevmalik.exprealty.com/",
   valuationUrl: "https://sanjeevmalik.exprealty.com/seller/valuation/",
