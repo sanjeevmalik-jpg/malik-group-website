@@ -1,0 +1,129 @@
+import Link from "next/link";
+import { site } from "@/lib/site";
+
+export const btnPrimary =
+  "inline-flex min-h-11 items-center justify-center rounded-full bg-navy px-5 py-2.5 text-center text-base font-semibold text-white transition hover:bg-navy-deep";
+
+export const btnSecondary =
+  "inline-flex min-h-11 items-center justify-center rounded-full border border-navy/15 bg-white px-5 py-2.5 text-center text-base font-semibold text-navy transition hover:border-navy/40 hover:bg-sand";
+
+export function Container({
+  className = "",
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) {
+  return <div className={`mx-auto w-full max-w-6xl px-5 sm:px-8 ${className}`}>{children}</div>;
+}
+
+export function JsonLd({ data }: { data: unknown }) {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data).replace(/</g, "\\u003c"),
+      }}
+    />
+  );
+}
+
+export function CtaLinks({
+  searchLabel = "Search Homes",
+  valueLabel = "What’s my home worth",
+  className = "",
+}: {
+  searchLabel?: string;
+  valueLabel?: string;
+  className?: string;
+}) {
+  return (
+    <div className={`flex flex-col gap-3 sm:flex-row sm:flex-wrap ${className}`}>
+      <a href={site.searchUrl} rel="noopener" className={btnPrimary}>
+        {searchLabel}
+      </a>
+      <a href={site.valuationUrl} rel="noopener" className={btnSecondary}>
+        {valueLabel}
+      </a>
+    </div>
+  );
+}
+
+export function PageHero({
+  eyebrow,
+  title,
+  children,
+}: {
+  eyebrow?: string;
+  title: string;
+  children?: React.ReactNode;
+}) {
+  return (
+    <header className="border-b border-line bg-white">
+      <Container className="py-12 sm:py-16">
+        {eyebrow ? (
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-orange-deep">{eyebrow}</p>
+        ) : null}
+        <h1 className="mt-3 max-w-3xl text-4xl leading-[1.15] text-navy sm:text-5xl">{title}</h1>
+        {children ? <div className="mt-5 max-w-2xl text-lg leading-relaxed text-slate">{children}</div> : null}
+      </Container>
+    </header>
+  );
+}
+
+export function PhotoSlot({
+  label,
+  className = "",
+  children,
+}: {
+  label: string;
+  className?: string;
+  children?: React.ReactNode;
+}) {
+  return (
+    <figure className={`relative overflow-hidden rounded-3xl border border-line ${className}`}>
+      <div className="absolute inset-0" aria-hidden="true">
+        {children}
+      </div>
+      <figcaption className="relative flex min-h-56 items-end p-4 sm:min-h-72 sm:p-6">
+        <span className="rounded-full bg-white/95 px-3 py-1.5 text-sm font-semibold text-navy shadow-sm">
+          Photo placeholder · {label}
+        </span>
+      </figcaption>
+    </figure>
+  );
+}
+
+export function EqualHousing({ className = "" }: { className?: string }) {
+  return (
+    <span className={`inline-flex items-center gap-2 ${className}`}>
+      <svg viewBox="0 0 64 64" className="h-9 w-9" role="img" aria-label="Equal Housing Opportunity">
+        <path
+          d="M8 30 32 8l24 22v26H8V30z"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="3"
+          strokeLinejoin="round"
+        />
+        <path d="M20 36h24M20 46h24" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+      </svg>
+      <span>Equal Housing Opportunity</span>
+    </span>
+  );
+}
+
+export function TextLink({ href, children }: { href: string; children: React.ReactNode }) {
+  const external = href.startsWith("http");
+  if (external) {
+    return (
+      <a href={href} rel="noopener" className="font-semibold text-navy underline decoration-orange/70 underline-offset-4">
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link href={href} className="font-semibold text-navy underline decoration-orange/70 underline-offset-4">
+      {children}
+    </Link>
+  );
+}
