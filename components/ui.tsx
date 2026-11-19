@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 
@@ -68,6 +69,40 @@ export function PageHero({
         {children ? <div className="mt-5 max-w-2xl text-lg leading-relaxed text-slate">{children}</div> : null}
       </Container>
     </header>
+  );
+}
+
+export function Portrait({
+  priority = false,
+  className = "",
+}: {
+  priority?: boolean;
+  className?: string;
+}) {
+  return (
+    <figure className={`overflow-hidden rounded-3xl border border-line bg-white shadow-sm ${className}`}>
+      <Image
+        src={site.portrait.src}
+        alt={site.portrait.alt}
+        width={site.portrait.width}
+        height={site.portrait.height}
+        priority={priority}
+        sizes="(min-width: 1024px) 420px, 90vw"
+        className="h-auto w-full"
+      />
+    </figure>
+  );
+}
+
+export function IconAgentBadge({ className = "" }: { className?: string }) {
+  return (
+    <Image
+      src={site.iconAgent.src}
+      alt={site.iconAgent.alt}
+      width={site.iconAgent.width}
+      height={site.iconAgent.height}
+      className={className}
+    />
   );
 }
 

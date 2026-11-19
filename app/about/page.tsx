@@ -1,4 +1,4 @@
-import { Container, CtaLinks, PageHero, PhotoSlot } from "@/components/ui";
+import { Container, CtaLinks, IconAgentBadge, PageHero, Portrait } from "@/components/ui";
 import { pageMeta } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -18,13 +18,13 @@ export default function AboutPage() {
         </p>
       </PageHero>
       <Container className="grid gap-10 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:py-16">
-        <PhotoSlot label="portrait of Sanjeev Malik" className="min-h-80 bg-gradient-to-br from-[#d5e2f0] via-cream to-[#f3d0b2]">
-          <svg viewBox="0 0 320 280" className="h-full w-full" aria-hidden="true">
-            <circle cx="160" cy="108" r="46" fill="#1a365d" />
-            <path d="M70 250c18-52 48-76 90-76s72 24 90 76" fill="#1a365d" />
-            <path d="M40 70h240" stroke="#e07834" strokeWidth="10" />
-          </svg>
-        </PhotoSlot>
+        <div>
+          <Portrait priority />
+          <div className="mt-4 flex items-center gap-3">
+            <IconAgentBadge className="h-12 w-auto" />
+            <p className="text-base font-semibold text-navy">eXp Realty ICON Agent</p>
+          </div>
+        </div>
         <div className="space-y-10 text-lg leading-relaxed text-slate">
           <section>
             <h2 className="text-3xl text-navy">A neighbor, and a father</h2>

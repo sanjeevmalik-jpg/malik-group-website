@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Container, CtaLinks, PhotoSlot } from "@/components/ui";
+import { Container, CtaLinks, IconAgentBadge, Portrait } from "@/components/ui";
 import { communities } from "@/lib/communities";
 import { pageMeta } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -43,15 +43,12 @@ export default function HomePage() {
               </a>
             </p>
           </div>
-          <PhotoSlot label="portrait of Sanjeev Malik" className="min-h-80 bg-gradient-to-br from-[#d7e4f2] via-cream to-[#f6d3b4]">
-            <svg viewBox="0 0 400 320" className="h-full w-full" aria-hidden="true">
-              <path d="M40 250 140 150l40 36V120h70v90l80 70H40z" fill="#1a365d" opacity="0.9" />
-              <path d="M150 168 210 110l18 16v-28h40v36l48 42h-24l-42-36-22 20-28-24z" fill="#e07834" />
-              <circle cx="300" cy="210" r="36" fill="#f6f3ee" />
-              <circle cx="300" cy="198" r="14" fill="#1a365d" />
-              <path d="M272 246c8-18 18-26 28-26s20 8 28 26" fill="#1a365d" />
-            </svg>
-          </PhotoSlot>
+          <div className="mx-auto w-full max-w-md">
+            <Portrait priority />
+            <div className="mt-4 flex justify-center">
+              <IconAgentBadge className="h-14 w-auto sm:h-16" />
+            </div>
+          </div>
         </Container>
       </section>
 

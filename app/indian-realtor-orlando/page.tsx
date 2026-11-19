@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { LeadForm } from "@/components/LeadForm";
-import { Container, CtaLinks, JsonLd } from "@/components/ui";
+import { Container, CtaLinks, JsonLd, Portrait } from "@/components/ui";
 import { indianAgentSchema, indianFaqSchema } from "@/lib/schema";
 import { pageMeta } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -46,17 +46,20 @@ export default function IndianRealtorPage() {
       <JsonLd data={indianFaqSchema} />
       <JsonLd data={indianAgentSchema} />
       <header className="border-b border-line bg-white">
-        <Container className="py-12 sm:py-16">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-orange-deep">
-            English · Hindi · Punjabi · Urdu
-          </p>
-          <h1 className="mt-3 max-w-3xl text-4xl leading-tight text-navy sm:text-5xl">
-            Indian Realtor in Orlando & Central Florida
-          </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate">
-            Sanjeev Malik is a Broker Associate with eXp Realty who has called Central Florida home since 1999. He helps families buy and sell in English, Hindi, Punjabi, and Urdu — with the same care he would want for his own.
-          </p>
-          <CtaLinks className="mt-7" searchLabel="Search Homes" valueLabel="What’s My Home Worth" />
+        <Container className="grid items-center gap-10 py-12 lg:grid-cols-[1.15fr_0.85fr] lg:py-16">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-orange-deep">
+              English · Hindi · Punjabi · Urdu
+            </p>
+            <h1 className="mt-3 max-w-3xl text-4xl leading-tight text-navy sm:text-5xl">
+              Indian Realtor in Orlando & Central Florida
+            </h1>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate">
+              Sanjeev Malik is a Broker Associate with eXp Realty who has called Central Florida home since 1999. He helps families buy and sell in English, Hindi, Punjabi, and Urdu — with the same care he would want for his own.
+            </p>
+            <CtaLinks className="mt-7" searchLabel="Search Homes" valueLabel="What’s My Home Worth" />
+          </div>
+          <Portrait priority className="mx-auto w-full max-w-sm" />
         </Container>
       </header>
 

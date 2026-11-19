@@ -29,6 +29,19 @@ export const site = {
   counties: ["Seminole", "Volusia", "Orange", "Osceola"] as const,
   disclosure:
     "Sanjeev Malik is a licensed real estate Broker Associate with eXp Realty LLC.",
+  portrait: {
+    src: "/sanjeev-malik.jpg",
+    width: 640,
+    height: 682,
+    alt: "Sanjeev Malik, Broker Associate, eXp Realty",
+  },
+  iconAgent: {
+    src: "/exp-icon-agent.png",
+    width: 500,
+    height: 500,
+    alt: "eXp Realty ICON Agent",
+    label: "eXp Realty ICON Agent",
+  },
 } as const;
 
 export const nav = [
