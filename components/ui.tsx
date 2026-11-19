@@ -117,6 +117,23 @@ export function PageHero({
   );
 }
 
+export function NameWithCredentials({
+  className = "",
+  credentialsClassName = "text-slate",
+}: {
+  className?: string;
+  credentialsClassName?: string;
+}) {
+  return (
+    <span className={className}>
+      {site.agent}
+      <span className={`whitespace-nowrap align-baseline text-[0.55em] font-semibold ${credentialsClassName}`}>
+        , MBA, GRI
+      </span>
+    </span>
+  );
+}
+
 export function Portrait({
   priority = false,
   className = "",

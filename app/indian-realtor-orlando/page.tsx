@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { LeadForm } from "@/components/LeadForm";
-import { Container, CtaLinks, JsonLd, Portrait } from "@/components/ui";
+import { Container, CtaLinks, JsonLd, NameWithCredentials, Portrait } from "@/components/ui";
 import { indianAgentSchema, indianFaqSchema } from "@/lib/schema";
 import { pageMeta } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -224,7 +224,9 @@ export default function IndianRealtorPage() {
           <p className="mt-4 max-w-2xl leading-relaxed text-white/85">
             When you are ready to buy or sell, Sanjeev would be glad to hear what you are looking for — in English, Hindi, Punjabi, or Urdu.
           </p>
-          <p className="mt-4 font-semibold">Sanjeev Malik</p>
+          <p className="mt-4 text-xl font-semibold">
+            <NameWithCredentials credentialsClassName="text-white/75" />
+          </p>
           <p>Broker Associate, eXp Realty</p>
           <p>Indian realtor in Orlando, Sanford, Lake Mary, and Central Florida</p>
           <p className="mt-3">

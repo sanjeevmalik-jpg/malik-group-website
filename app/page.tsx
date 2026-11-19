@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Container, CtaLinks, IconAgentBadge, Portrait, Tagline } from "@/components/ui";
+import { Container, CtaLinks, IconAgentBadge, NameWithCredentials, Portrait, Tagline } from "@/components/ui";
 import { communities } from "@/lib/communities";
 import { pageMeta } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -39,7 +39,9 @@ export default function HomePage() {
           </div>
           <div className="mx-auto w-full max-w-md text-center">
             <Portrait priority />
-            <p className="mt-5 font-display text-3xl text-navy sm:text-4xl">Sanjeev Malik</p>
+            <p className="mt-5 font-display text-3xl leading-tight text-navy sm:text-4xl">
+              <NameWithCredentials />
+            </p>
             <p className="mt-1 text-base text-slate">Broker Associate, eXp Realty</p>
             <a
               href={site.phoneTel}

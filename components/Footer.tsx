@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { communities } from "@/lib/communities";
 import { nav, site } from "@/lib/site";
-import { EqualHousing, IconAgentBadge, Tagline } from "@/components/ui";
+import { EqualHousing, IconAgentBadge, NameWithCredentials, Tagline } from "@/components/ui";
 
 export function Footer() {
   return (
@@ -17,7 +17,7 @@ export function Footer() {
             <Tagline tone="light" compact />
           </div>
           <p className="mt-2 text-sm leading-relaxed text-white/85">
-            {site.agent}
+            <NameWithCredentials credentialsClassName="text-white/70" />
             <br />
             {site.title}
           </p>
