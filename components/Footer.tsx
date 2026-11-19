@@ -9,7 +9,9 @@ export function Footer() {
     <footer className="mt-auto bg-navy-deep text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-8 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Image src="/logo-icon.jpg" alt="" width={497} height={412} className="h-16 w-auto rounded-lg bg-white p-1" />
+          <Link href="/" aria-label="Malik Group home" className="inline-flex rounded-2xl bg-white p-2.5">
+            <Image src="/logo-icon-trim.png" alt="" width={649} height={580} className="h-16 w-auto" />
+          </Link>
           <p className="mt-4 font-display text-2xl">Malik Group</p>
           <p className="mt-2 text-sm leading-relaxed text-white/85">
             {site.agent}

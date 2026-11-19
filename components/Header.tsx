@@ -36,17 +36,17 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3 sm:px-8">
         <Link href="/" aria-label="Malik Group home" className="mr-auto shrink-0">
           <Image
-            src="/logo-icon.jpg"
+            src="/logo-icon-trim.png"
             alt=""
-            width={497}
-            height={412}
+            width={649}
+            height={580}
             className="h-11 w-auto sm:hidden"
           />
           <Image
-            src="/logo-full.jpg"
+            src="/logo-full-trim.png"
             alt=""
-            width={868}
-            height={250}
+            width={1102}
+            height={305}
             priority
             className="hidden h-12 w-auto sm:block md:h-14"
           />

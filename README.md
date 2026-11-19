@@ -42,4 +42,4 @@ Old WordPress paths are redirected in `next.config.ts`, including with a trailin
 
 ## Notes
 
-Search Homes links open https://sanjeevmalik.exprealty.com/. Home value links open https://sanjeevmalik.exprealty.com/seller/valuation/. A direct Google Business Profile URL was not in the source facts, so Google reviews point at a search and `/google-review` lands on `/reviews`. No street address is published. Logo files in `public/` are a redraw of the supplied navy-and-orange MG mark; replace `logo-full.jpg` and `logo-icon.jpg` with the original art files if you have them.
+Search Homes links open https://sanjeevmalik.exprealty.com/. Home value links open https://sanjeevmalik.exprealty.com/seller/valuation/. A direct Google Business Profile URL was not in the source facts, so Google reviews point at a search and `/google-review` lands on `/reviews`. No street address is published. `public/logo-full.jpg` and `public/logo-icon.jpg` are the original art. The header, footer, favicon, and apple icon use tight crops of those same files (`logo-full-trim.png`, `logo-icon-trim.png`) so the mark is not lost in the white canvas.
