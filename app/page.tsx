@@ -36,17 +36,19 @@ export default function HomePage() {
             </p>
             <p className="mt-3 text-base font-semibold text-navy">{site.languages.join(" · ")}</p>
             <CtaLinks className="mt-7" />
-            <p className="mt-5 text-base text-slate">
-              Call or text{" "}
-              <a href={site.phoneTel} className="font-semibold text-navy underline decoration-orange/70 underline-offset-4">
-                {site.phoneDisplay}
-              </a>
-            </p>
           </div>
-          <div className="mx-auto w-full max-w-md">
+          <div className="mx-auto w-full max-w-md text-center">
             <Portrait priority />
+            <p className="mt-5 font-display text-3xl text-navy sm:text-4xl">Sanjeev Malik</p>
+            <p className="mt-1 text-base text-slate">Broker Associate, eXp Realty</p>
+            <a
+              href={site.phoneTel}
+              className="mt-2 inline-flex min-h-12 items-center text-lg font-semibold text-navy underline decoration-orange/70 underline-offset-4"
+            >
+              {site.phoneDisplay}
+            </a>
             <div className="mt-4 flex justify-center">
-              <IconAgentBadge className="h-14 w-auto sm:h-16" />
+              <IconAgentBadge className="h-12 w-auto sm:h-14" />
             </div>
           </div>
         </Container>
