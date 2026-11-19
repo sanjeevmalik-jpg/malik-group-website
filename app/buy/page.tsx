@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Container, CtaLinks, PageHero } from "@/components/ui";
 import { pageMeta } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { CAREER_START_YEAR, site, yearsAsRealtor } from "@/lib/site";
 
 export const metadata = pageMeta({
   title: "Buy a Home in Central Florida",
@@ -34,7 +34,7 @@ export default function BuyPage() {
     <>
       <PageHero eyebrow="Buy" title="Search Central Florida homes with a local guide.">
         <p>
-          Sanjeev Malik has lived here since 1999 and has 12 years in real estate. Start with the listings, then tell him what the house needs to do.
+          Sanjeev Malik has lived here since 1999 and has been a Realtor since {CAREER_START_YEAR} ({yearsAsRealtor()} years). Start with the listings, then tell him what the house needs to do.
         </p>
       </PageHero>
       <Container className="py-12 sm:py-16">

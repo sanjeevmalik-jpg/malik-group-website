@@ -1,4 +1,6 @@
-import { areaServed, site } from "@/lib/site";
+import { areaServed, CAREER_START_YEAR, site, socialLinks, yearsAsRealtor } from "@/lib/site";
+
+const sameAs = [site.zillowUrl, site.searchUrl, ...socialLinks.map((link) => link.href)];
 
 const languages = site.languages.map((name) => ({
   "@type": "Language",
@@ -17,7 +19,7 @@ export const siteAgentSchema = {
   award: site.iconAgent.label,
   areaServed: [...areaServed],
   knowsLanguage: languages,
-  sameAs: [site.zillowUrl, site.searchUrl],
+  sameAs,
 };
 
 export const indianAgentSchema = {
@@ -50,10 +52,7 @@ export const indianAgentSchema = {
     "@type": "CollegeOrUniversity",
     name: "University of Central Florida",
   },
-  sameAs: [
-    "https://www.zillow.com/profile/SanjeevMalikTeam/",
-    "https://sanjeevmalik.exprealty.com/",
-  ],
+  sameAs,
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",
@@ -72,7 +71,7 @@ export const indianFaqSchema = {
       name: "Are you an Indian realtor in Orlando and Central Florida?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Sanjeev Malik is a Broker Associate with eXp Realty and an Indian realtor serving Orlando and Central Florida. He has lived here since 1999 and has 12 years of real estate experience. He works with clients of every background and is glad to help in English, Hindi, Punjabi, or Urdu.",
+        text: `Yes. Sanjeev Malik is a Broker Associate with eXp Realty and an Indian realtor serving Orlando and Central Florida. He has lived here since 1999 and has been a Realtor since ${CAREER_START_YEAR}, with ${yearsAsRealtor()} years of real estate experience. He works with clients of every background and is glad to help in English, Hindi, Punjabi, or Urdu.`,
       },
     },
     {

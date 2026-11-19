@@ -1,3 +1,20 @@
+/** First year Sanjeev worked as a Realtor. Experience is counted from this year. */
+export const CAREER_START_YEAR = 2014;
+
+export function yearsAsRealtor(year = new Date().getFullYear()): number {
+  return year - CAREER_START_YEAR;
+}
+
+export const socialLinks = [
+  { name: "Facebook", href: "https://www.facebook.com/SanjeevMalikTeam" },
+  { name: "Instagram", href: "https://www.instagram.com/sanjeev_malik10/" },
+  { name: "TikTok", href: "https://www.tiktok.com/@sanjeevmalik000" },
+  { name: "X", href: "https://x.com/chidabas" },
+  { name: "YouTube", href: "https://www.youtube.com/@sanjeevmalik" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/sanjeev-malik-ms-mba-0b51571" },
+  { name: "Pinterest", href: "https://in.pinterest.com/sanjeev5070/" },
+] as const;
+
 export const site = {
   name: "Malik Group",
   url: "https://sanjeevmalik.com",

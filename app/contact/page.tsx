@@ -1,3 +1,4 @@
+import { SocialLinks } from "@/components/SocialLinks";
 import { LeadForm } from "@/components/LeadForm";
 import { Container, PageHero, Portrait, ReachSanjeev } from "@/components/ui";
 import { pageMeta } from "@/lib/seo";
@@ -27,6 +28,10 @@ export default function ContactPage() {
             <a href={site.phoneTel} className="mt-2 inline-flex text-lg font-semibold text-navy underline">
               {site.phoneDisplay}
             </a>
+          </div>
+          <div className="rounded-3xl bg-white p-6">
+            <h2 className="text-2xl text-navy">Social</h2>
+            <SocialLinks className="mt-3 text-navy" />
           </div>
           <div className="rounded-3xl bg-white p-6">
             <h2 className="text-2xl text-navy">Email</h2>

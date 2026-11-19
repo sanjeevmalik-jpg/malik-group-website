@@ -1,11 +1,10 @@
 import { Container, CtaLinks, IconAgentBadge, PageHero, Portrait } from "@/components/ui";
 import { pageMeta } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { CAREER_START_YEAR, site, yearsAsRealtor } from "@/lib/site";
 
 export const metadata = pageMeta({
   title: "About Sanjeev Malik",
-  description:
-    "Sanjeev Malik has lived in Central Florida since 1999 and has 12 years in real estate. Broker Associate, eXp Realty. MBA from UCF. License BK3313715.",
+  description: `Sanjeev Malik has lived in Central Florida since 1999 and has been a Realtor since ${CAREER_START_YEAR}. Broker Associate, eXp Realty. MBA from UCF. License BK3313715.`,
   path: "/about",
 });
 
@@ -14,7 +13,7 @@ export default function AboutPage() {
     <>
       <PageHero eyebrow="About" title="I have called Central Florida home since 1999.">
         <p>
-          I am Sanjeev Malik, a Broker Associate with eXp Realty LLC. I have worked in real estate for 12 years. My Florida license number is {site.license}.
+          I am Sanjeev Malik, a Broker Associate with eXp Realty LLC. I have been a Realtor since {CAREER_START_YEAR}, {yearsAsRealtor()} years. My Florida license number is {site.license}.
         </p>
       </PageHero>
       <Container className="grid gap-10 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:py-16">

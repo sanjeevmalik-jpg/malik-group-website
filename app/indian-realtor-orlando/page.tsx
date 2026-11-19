@@ -3,7 +3,7 @@ import { LeadForm } from "@/components/LeadForm";
 import { Container, CtaLinks, JsonLd, NameWithCredentials, Portrait } from "@/components/ui";
 import { indianAgentSchema, indianFaqSchema } from "@/lib/schema";
 import { pageMeta } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { CAREER_START_YEAR, site, yearsAsRealtor } from "@/lib/site";
 
 export const metadata = pageMeta({
   title: "Indian Realtor in Orlando | Sanjeev Malik",
@@ -16,7 +16,7 @@ export const metadata = pageMeta({
 const faqs = [
   {
     q: "Are you an Indian realtor in Orlando and Central Florida?",
-    a: "Yes. Sanjeev Malik is a Broker Associate with eXp Realty and an Indian realtor serving Orlando and Central Florida. He has lived here since 1999 and has 12 years of real estate experience. He works with clients of every background and is glad to help in English, Hindi, Punjabi, or Urdu.",
+    a: `Yes. Sanjeev Malik is a Broker Associate with eXp Realty and an Indian realtor serving Orlando and Central Florida. He has lived here since 1999 and has been a Realtor since ${CAREER_START_YEAR}, with ${yearsAsRealtor()} years of real estate experience. He works with clients of every background and is glad to help in English, Hindi, Punjabi, or Urdu.`,
   },
   {
     q: "Do you speak Hindi and Punjabi?",
@@ -71,7 +71,7 @@ export default function IndianRealtorPage() {
           </p>
           <ul className="mt-6 grid gap-4">
             <li className="rounded-3xl bg-white p-6 leading-relaxed text-slate">
-              <strong className="text-navy">A neighbor, not just an agent.</strong> Sanjeev has lived in Central Florida since 1999 and has been a real estate professional for 12 years. He is a husband and a father of two teenagers, so he understands what a family move actually involves.
+              <strong className="text-navy">A neighbor, not just an agent.</strong> Sanjeev has lived in Central Florida since 1999 and has been a Realtor since {CAREER_START_YEAR} ({yearsAsRealtor()} years). He is a husband and a father of two teenagers, so he understands what a family move actually involves.
             </li>
             <li className="rounded-3xl bg-white p-6 leading-relaxed text-slate">
               <strong className="text-navy">A clear, well-trained advisor.</strong> He holds an MBA from the University of Central Florida, a Master of Science in Environmental Engineering, a Master of Science in Computer Science, and a Bachelor of Science in Civil Engineering, and he earned the GRI (Graduate, REALTOR® Institute) designation in 2016. That mix of education is useful when you want someone who can talk through a house as well as a contract.
