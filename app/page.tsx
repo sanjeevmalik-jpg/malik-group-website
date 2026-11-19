@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Container, CtaLinks, IconAgentBadge, Portrait, ReachSanjeev } from "@/components/ui";
+import { Container, CtaLinks, IconAgentBadge, Portrait } from "@/components/ui";
 import { communities } from "@/lib/communities";
 import { pageMeta } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -36,7 +36,6 @@ export default function HomePage() {
             </p>
             <p className="mt-3 text-base font-semibold text-navy">{site.languages.join(" · ")}</p>
             <CtaLinks className="mt-7" />
-            <ReachSanjeev className="mt-3 md:hidden" />
             <p className="mt-5 text-base text-slate">
               Call or text{" "}
               <a href={site.phoneTel} className="font-semibold text-navy underline decoration-orange/70 underline-offset-4">
