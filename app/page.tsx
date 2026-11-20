@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FaqSection } from "@/components/FaqSection";
 import { RelatedPages } from "@/components/RelatedPages";
-import { AboutContactLinks, Container, CtaLinks, IconAgentBadge, NameWithCredentials, Portrait, Tagline } from "@/components/ui";
+import { AboutContactLinks, Container, CtaLinks, EmailAddress, IconAgentBadge, NameWithCredentials, PhoneWithText, Portrait, Tagline } from "@/components/ui";
 import { communities } from "@/lib/communities";
 import { entitySummary, homeFaqs, pageMeta } from "@/lib/seo";
 import { CAREER_START_YEAR, site } from "@/lib/site";
@@ -45,12 +45,9 @@ export default function HomePage() {
               <NameWithCredentials />
             </p>
             <p className="mt-1 text-base text-slate">Broker Associate, eXp Realty</p>
-            <a
-              href={site.phoneTel}
-              className="mt-2 inline-flex min-h-12 items-center text-lg font-semibold text-navy underline decoration-orange/70 underline-offset-4"
-            >
-              {site.phoneDisplay}
-            </a>
+            <div className="mt-2 flex justify-center">
+              <PhoneWithText />
+            </div>
             <Tagline className="mt-3" />
             <div className="mt-4 flex justify-center">
               <IconAgentBadge className="h-12 w-auto sm:h-14" />
@@ -175,11 +172,14 @@ export default function HomePage() {
         <Container>
           <h2 className="text-3xl text-white sm:text-4xl">Talk with Sanjeev</h2>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/85">
-            Call or text {site.phoneDisplay}, or email {site.email}. He is a Broker Associate with eXp Realty LLC, license {site.license}.
+            Call or text <PhoneWithText tone="light" />, or email <EmailAddress tone="light" />. He is a Broker Associate with eXp Realty LLC, license {site.license}.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a href={site.phoneTel} className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 font-semibold text-navy">
-              {site.phoneDisplay}
+            <a href={site.phoneTel} aria-label={`Call ${site.phoneDisplay}`} className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 font-semibold text-navy">
+              Call {site.phoneDisplay}
+            </a>
+            <a href={site.smsTel} aria-label={`Text ${site.phoneDisplay}`} className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/30 px-5 font-semibold text-white">
+              Text {site.phoneDisplay}
             </a>
             <Link href="/contact" className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/30 px-5 font-semibold text-white">
               Contact form

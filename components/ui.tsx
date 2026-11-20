@@ -62,6 +62,45 @@ function MailIcon() {
   );
 }
 
+export function PhoneWithText({
+  tone = "navy",
+  label,
+}: {
+  tone?: "navy" | "light";
+  label?: string;
+}) {
+  const color = tone === "light" ? "text-white decoration-white/70" : "text-navy decoration-orange/70";
+  const link = `inline-flex min-h-11 items-center font-semibold underline underline-offset-4 ${color}`;
+  return (
+    <span className="inline-flex flex-wrap items-center gap-0.5 align-middle">
+      <a href={site.phoneTel} aria-label={`Call ${site.phoneDisplay}`} className={`${link} px-0.5`}>
+        {label ?? site.phoneDisplay}
+      </a>
+      <a
+        href={site.smsTel}
+        aria-label={`Text ${site.phoneDisplay}`}
+        className={`inline-flex h-11 w-11 items-center justify-center rounded-full ${tone === "light" ? "text-white" : "text-navy"}`}
+      >
+        <ChatIcon />
+        <span className="sr-only">Text {site.phoneDisplay}</span>
+      </a>
+    </span>
+  );
+}
+
+export function EmailAddress({ tone = "navy" }: { tone?: "navy" | "light" }) {
+  const color = tone === "light" ? "text-white decoration-white/70" : "text-navy decoration-orange/70";
+  return (
+    <a
+      href={`mailto:${site.email}`}
+      aria-label={`Email ${site.email}`}
+      className={`inline-flex min-h-11 items-center break-all font-semibold underline underline-offset-4 ${color}`}
+    >
+      {site.email}
+    </a>
+  );
+}
+
 export function AboutContactLinks({ className = "" }: { className?: string }) {
   const item =
     "inline-flex min-h-12 items-center gap-2 rounded-full py-2 text-base font-semibold text-navy underline decoration-orange/70 underline-offset-4";

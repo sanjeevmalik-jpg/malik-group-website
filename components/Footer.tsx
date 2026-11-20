@@ -3,7 +3,7 @@ import Link from "next/link";
 import { communities } from "@/lib/communities";
 import { nav, site } from "@/lib/site";
 import { SocialLinks } from "@/components/SocialLinks";
-import { EqualHousing, IconAgentBadge, NameWithCredentials, Tagline } from "@/components/ui";
+import { EmailAddress, EqualHousing, IconAgentBadge, NameWithCredentials, PhoneWithText, Tagline } from "@/components/ui";
 
 export function Footer() {
   return (
@@ -63,14 +63,10 @@ export function Footer() {
           <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-orange">Contact</h2>
           <ul className="mt-4 grid gap-2 text-sm">
             <li>
-              <a href={site.phoneTel} className="text-white/90 hover:text-white">
-                {site.phoneDisplay}
-              </a>
+              <PhoneWithText tone="light" />
             </li>
             <li>
-              <a href={`mailto:${site.email}`} className="break-all text-white/90 hover:text-white">
-                {site.email}
-              </a>
+              <EmailAddress tone="light" />
             </li>
           </ul>
           <p className="mt-4 text-sm leading-relaxed text-white/80">

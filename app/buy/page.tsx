@@ -2,10 +2,10 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FaqSection } from "@/components/FaqSection";
 import { RelatedPages } from "@/components/RelatedPages";
-import { Container, CtaLinks, JsonLd, PageHero } from "@/components/ui";
+import { Container, CtaLinks, JsonLd, PageHero, PhoneWithText } from "@/components/ui";
 import { buyFaqs, pageMeta } from "@/lib/seo";
 import { serviceSchema } from "@/lib/schema";
-import { CAREER_START_YEAR, site } from "@/lib/site";
+import { CAREER_START_YEAR } from "@/lib/site";
 
 export const metadata = pageMeta({
   title: "Buy a Home in Central Florida",
@@ -65,7 +65,7 @@ export default function BuyPage() {
           ))}
         </ol>
         <p className="mt-10 max-w-2xl leading-relaxed text-slate">
-          Moving from another city? The <Link href="/relocation" className="font-semibold text-navy underline">relocation realtor guide</Link> covers how to compare communities before a visit. You can also call {site.phoneDisplay}.
+          Moving from another city? The <Link href="/relocation" className="font-semibold text-navy underline">relocation realtor guide</Link> covers how to compare communities before a visit. You can also call <PhoneWithText />.
         </p>
         <FaqSection items={buyFaqs()} />
         <RelatedPages exclude="/buy" />

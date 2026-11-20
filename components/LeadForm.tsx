@@ -1,9 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { site } from "@/lib/site";
+import { btnPrimary, EmailAddress, PhoneWithText } from "@/components/ui";
 import { FRIENDLY_LEAD_ERROR, parseLead, type LeadField } from "@/lib/lead";
-import { btnPrimary } from "@/components/ui";
 
 type DealType = "buyer" | "seller" | "buyer,seller";
 
@@ -86,15 +85,7 @@ export function LeadForm({
       <div role="status" className="rounded-3xl border border-line bg-white p-6 sm:p-8">
         <h2 className="text-3xl text-navy">Thank you</h2>
         <p className="mt-3 text-lg leading-relaxed text-slate">
-          Sanjeev received your note and will be in touch. If you would rather talk now, call{" "}
-          <a href={site.phoneTel} className="font-semibold text-navy underline">
-            {site.phoneDisplay}
-          </a>{" "}
-          or email{" "}
-          <a href={`mailto:${site.email}`} className="font-semibold text-navy underline">
-            {site.email}
-          </a>
-          .
+          Sanjeev received your note and will be in touch. If you would rather talk now, call <PhoneWithText /> or email <EmailAddress />.
         </p>
       </div>
     );
@@ -108,15 +99,7 @@ export function LeadForm({
         <div role="alert" className="mt-4 rounded-2xl bg-sand px-4 py-3 text-sm leading-relaxed text-ink">
           <p>{error}</p>
           <p className="mt-2">
-            Call{" "}
-            <a href={site.phoneTel} className="font-semibold text-navy underline">
-              {site.phoneDisplay}
-            </a>{" "}
-            or email{" "}
-            <a href={`mailto:${site.email}`} className="font-semibold text-navy underline">
-              {site.email}
-            </a>
-            .
+            Call <PhoneWithText /> or email <EmailAddress />.
           </p>
         </div>
       ) : null}

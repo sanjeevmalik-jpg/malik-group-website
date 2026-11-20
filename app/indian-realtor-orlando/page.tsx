@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { LeadForm } from "@/components/LeadForm";
-import { Container, CtaLinks, JsonLd, NameWithCredentials, Portrait } from "@/components/ui";
+import { Container, CtaLinks, EmailAddress, JsonLd, NameWithCredentials, PhoneWithText, Portrait } from "@/components/ui";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FaqSection } from "@/components/FaqSection";
 import { RelatedPages } from "@/components/RelatedPages";
@@ -181,15 +181,7 @@ export default function IndianRealtorPage() {
             <a href={site.valuationUrl} rel="noopener" className="font-semibold text-navy underline">
               request a home value
             </a>
-            , call or text{" "}
-            <a href={site.phoneTel} className="font-semibold text-navy underline">
-              (321) 297-3009
-            </a>
-            , or email{" "}
-            <a href={`mailto:${site.email}`} className="font-semibold text-navy underline">
-              {site.email}
-            </a>
-            .
+            , call or text <PhoneWithText />, or email <EmailAddress />.
           </p>
         </section>
 
@@ -204,13 +196,9 @@ export default function IndianRealtorPage() {
           <p>Broker Associate, eXp Realty</p>
           <p>Indian realtor in Orlando, Sanford, Lake Mary, and Central Florida</p>
           <p className="mt-3">
-            <a href={site.phoneTel} className="underline">
-              (321) 297-3009
-            </a>
+            <PhoneWithText tone="light" />
             <br />
-            <a href={`mailto:${site.email}`} className="underline">
-              {site.email}
-            </a>
+            <EmailAddress tone="light" />
           </p>
           <CtaLinks className="mt-6" searchLabel="Search Homes" valueLabel="What’s My Home Worth" />
         </section>

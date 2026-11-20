@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { nav, site } from "@/lib/site";
-import { btnPrimary } from "@/components/ui";
+import { btnPrimary, PhoneWithText } from "@/components/ui";
 
 function current(pathname: string, href: string) {
   if (href === "/communities") {
@@ -62,12 +62,12 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <a href={site.phoneTel} className="hidden min-h-11 items-center px-2 text-sm font-semibold text-navy sm:inline-flex">
-          {site.phoneDisplay}
-        </a>
-        <a href={site.phoneTel} className="inline-flex min-h-11 items-center px-2 text-sm font-semibold text-navy sm:hidden">
-          Call
-        </a>
+        <span className="hidden sm:inline-flex">
+          <PhoneWithText />
+        </span>
+        <span className="inline-flex sm:hidden">
+          <PhoneWithText label="Call" />
+        </span>
         <a href={site.searchUrl} rel="noopener" className={`${btnPrimary} px-3 sm:px-5`}>
           <span className="sm:hidden">Search</span>
           <span className="hidden sm:inline">Search Homes</span>

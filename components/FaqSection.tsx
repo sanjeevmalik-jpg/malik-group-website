@@ -1,12 +1,17 @@
-import { JsonLd } from "@/components/ui";
+import { EmailAddress, JsonLd, PhoneWithText } from "@/components/ui";
 import type { FaqItem } from "@/lib/seo";
 import { faqPageSchema } from "@/lib/schema";
+import { site } from "@/lib/site";
 
 function AnswerText({ text }: { text: string }) {
-  const parts = text.split(/(https:\/\/[^\s]+)/g);
+  const phone = site.phoneDisplay.replace(/[()]/g, "\\$&");
+  const email = site.email.replace(/[.]/g, "\\.");
+  const parts = text.split(new RegExp(`(https://[^\\s]+|${phone}|${email})`, "g"));
   return (
     <>
       {parts.map((part, index) => {
+        if (part === site.phoneDisplay) return <PhoneWithText key={index} />;
+        if (part === site.email) return <EmailAddress key={index} />;
         if (!part.startsWith("https://")) return <span key={index}>{part}</span>;
         const href = part.replace(/[.,)]+$/, "");
         const trailing = part.slice(href.length);

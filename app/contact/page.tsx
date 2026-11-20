@@ -2,7 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { LeadForm } from "@/components/LeadForm";
 import { RelatedPages } from "@/components/RelatedPages";
 import { SocialLinks } from "@/components/SocialLinks";
-import { Container, PageHero, Portrait, ReachSanjeev } from "@/components/ui";
+import { Container, EmailAddress, PageHero, PhoneWithText, Portrait, ReachSanjeev } from "@/components/ui";
 import { pageMeta } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -32,9 +32,9 @@ export default function ContactPage() {
           <Portrait className="mx-auto w-full max-w-sm" />
           <div className="rounded-3xl bg-white p-6">
             <h2 className="text-2xl text-navy">Phone</h2>
-            <a href={site.phoneTel} className="mt-2 inline-flex text-lg font-semibold text-navy underline">
-              {site.phoneDisplay}
-            </a>
+            <div className="mt-2">
+              <PhoneWithText />
+            </div>
           </div>
           <div className="rounded-3xl bg-white p-6">
             <h2 className="text-2xl text-navy">Social</h2>
@@ -42,9 +42,9 @@ export default function ContactPage() {
           </div>
           <div className="rounded-3xl bg-white p-6">
             <h2 className="text-2xl text-navy">Email</h2>
-            <a href={`mailto:${site.email}`} className="mt-2 inline-flex break-all text-lg font-semibold text-navy underline">
-              {site.email}
-            </a>
+            <div className="mt-2">
+              <EmailAddress />
+            </div>
           </div>
           <div className="rounded-3xl bg-white p-6 text-slate">
             <h2 className="text-2xl text-navy">Office</h2>
