@@ -16,6 +16,26 @@
   --color-white: #ffffff;
 }
 
+@keyframes hero-kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.hero-kenburns {
+  animation: hero-kenburns 15s linear infinite alternate;
+  transform-origin: center center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-kenburns {
+    animation: none;
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

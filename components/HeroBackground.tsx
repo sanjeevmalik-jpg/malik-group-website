@@ -81,7 +81,7 @@ export function HeroBackground() {
       {src ? (
         <video
           ref={videoRef}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="hero-kenburns absolute inset-0 h-full w-full object-cover"
           autoPlay
           muted
           loop
@@ -90,7 +90,8 @@ export function HeroBackground() {
           poster={POSTER_SRC}
         />
       ) : null}
-      <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(16,36,63,0.94)_0%,rgba(16,36,63,0.9)_52%,rgba(16,36,63,0.88)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(16,36,63,0.18)_0%,rgba(16,36,63,0.24)_14%,rgba(16,36,63,0.72)_30%,rgba(16,36,63,0.74)_100%)] lg:bg-[linear-gradient(100deg,rgba(16,36,63,0.74)_0%,rgba(16,36,63,0.58)_26%,rgba(16,36,63,0.22)_52%,rgba(16,36,63,0.16)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(16,36,63,0.3)_0%,rgba(16,36,63,0)_40%)]" />
     </div>
   );
 }

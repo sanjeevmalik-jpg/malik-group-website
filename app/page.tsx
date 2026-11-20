@@ -27,38 +27,40 @@ export default function HomePage() {
     <>
       <section className="relative isolate overflow-hidden bg-navy text-white">
         <HeroBackground />
-        <Container className="relative z-10 grid items-center gap-10 py-12 lg:grid-cols-[1.1fr_0.9fr] lg:py-16">
+        <Container className="relative z-10 grid items-center gap-10 pt-[18vh] pb-12 lg:grid-cols-[1.1fr_0.9fr] lg:py-16">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white">
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white [text-shadow:0_2px_18px_rgba(16,36,63,0.55)]">
               Central Florida · eXp Realty
             </p>
-            <h1 className="mt-3 text-4xl leading-[1.12] text-white sm:text-5xl lg:text-6xl">
+            <h1 className="mt-3 text-4xl leading-[1.12] text-white [text-shadow:0_2px_18px_rgba(16,36,63,0.55)] sm:text-5xl lg:text-6xl">
               Central Florida real estate, with a guide who has lived here since 1999.
             </h1>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-white">
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-white [text-shadow:0_2px_18px_rgba(16,36,63,0.55)]">
               Sanjeev Malik is a Broker Associate with eXp Realty LLC and has been a Realtor since {CAREER_START_YEAR}. He helps people buy, sell, and relocate in Lake Mary, Sanford, Orlando, and across Seminole, Volusia, Orange, and Osceola counties.
             </p>
-            <p className="mt-3 text-base font-semibold text-white">{site.languages.join(" · ")}</p>
+            <p className="mt-3 text-base font-semibold text-white [text-shadow:0_2px_18px_rgba(16,36,63,0.55)]">{site.languages.join(" · ")}</p>
             <CtaLinks className="mt-7" tone="onDark" />
           </div>
           <div className="mx-auto w-full max-w-md text-center">
             <Portrait />
-            <p className="mt-5 font-display text-3xl leading-tight text-white sm:text-4xl">
-              <NameWithCredentials credentialsClassName="text-white/80" />
-            </p>
-            <p className="mt-1 text-base text-white/90">Broker Associate, eXp Realty</p>
-            <div className="mt-2 flex justify-center">
-              <a
-                href={site.phoneTel}
-                aria-label={`Call ${site.phoneDisplay}`}
-                className="inline-flex min-h-11 items-center text-[1.2rem] font-semibold text-white underline decoration-white/70 underline-offset-4 sm:text-2xl"
-              >
-                {site.phoneDisplay}
-              </a>
-            </div>
-            <Tagline tone="light" accentClassName="text-[#ffb070]" className="mt-3" />
-            <div className="mt-4 flex justify-center">
-              <IconAgentBadge className="h-12 w-auto rounded-lg bg-white p-1 sm:h-14" />
+            <div className="mt-5 rounded-3xl bg-[#10243f]/70 px-5 py-4 backdrop-blur-md">
+              <p className="font-display text-3xl leading-tight text-white sm:text-4xl">
+                <NameWithCredentials credentialsClassName="text-white/80" />
+              </p>
+              <p className="mt-1 text-base text-white/90">Broker Associate, eXp Realty</p>
+              <div className="mt-2 flex justify-center">
+                <a
+                  href={site.phoneTel}
+                  aria-label={`Call ${site.phoneDisplay}`}
+                  className="inline-flex min-h-11 items-center text-[1.2rem] font-semibold text-white underline decoration-white/70 underline-offset-4 sm:text-2xl"
+                >
+                  {site.phoneDisplay}
+                </a>
+              </div>
+              <Tagline tone="light" accentClassName="text-[#ffb070]" className="mt-3" />
+              <div className="mt-4 flex justify-center">
+                <IconAgentBadge className="h-12 w-auto rounded-lg bg-white p-1 sm:h-14" />
+              </div>
             </div>
           </div>
         </Container>
