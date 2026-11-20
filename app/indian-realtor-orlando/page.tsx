@@ -6,7 +6,7 @@ import { FaqSection } from "@/components/FaqSection";
 import { RelatedPages } from "@/components/RelatedPages";
 import { indianAgentSchema } from "@/lib/schema";
 import { indianFaqs, pageMeta } from "@/lib/seo";
-import { CAREER_START_YEAR, site, yearsAsRealtor } from "@/lib/site";
+import { CAREER_START_YEAR, site } from "@/lib/site";
 
 export const metadata = pageMeta({
   title: "Orlando Indian Realtor | Hindi, Urdu",
@@ -52,7 +52,7 @@ export default function IndianRealtorPage() {
           </p>
           <ul className="mt-6 grid gap-4">
             <li className="rounded-3xl bg-white p-6 leading-relaxed text-slate">
-              <strong className="text-navy">A neighbor, not just an agent.</strong> Sanjeev has lived in Central Florida since 1999 and has been a Realtor since {CAREER_START_YEAR} ({yearsAsRealtor()} years). He is a husband and a father of two teenagers, so he understands what a family move actually involves.
+              <strong className="text-navy">A neighbor, not just an agent.</strong> Sanjeev has lived in Central Florida since 1999 and has been a Realtor since {CAREER_START_YEAR}. He is a husband and a father of two teenagers, so he understands what a family move actually involves.
             </li>
             <li className="rounded-3xl bg-white p-6 leading-relaxed text-slate">
               <strong className="text-navy">A clear, well-trained advisor.</strong> He holds an MBA from the University of Central Florida, a Master of Science in Environmental Engineering, a Master of Science in Computer Science, and a Bachelor of Science in Civil Engineering, and he earned the GRI (Graduate, REALTOR® Institute) designation in 2016. That mix of education is useful when you want someone who can talk through a house as well as a contract.

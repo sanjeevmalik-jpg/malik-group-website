@@ -1,4 +1,4 @@
-import { areaServed, CAREER_START_YEAR, site, socialLinks, yearsAsRealtor } from "@/lib/site";
+import { areaServed, CAREER_START_YEAR, site, socialLinks } from "@/lib/site";
 import type { Crumb, FaqItem } from "@/lib/seo";
 import { indianFaqs } from "@/lib/seo";
 
@@ -54,7 +54,7 @@ export const siteGraphSchema = {
       url: `${site.url}/`,
       image: `${site.url}${site.portrait.src}`,
       award: site.iconAgent.label,
-      description: `Sanjeev Malik, MBA, GRI, has been a Realtor since ${CAREER_START_YEAR} (${yearsAsRealtor()} years) and has lived in Central Florida since 1999. He works in English, Hindi, Punjabi, and Urdu.`,
+      description: `Sanjeev Malik, MBA, GRI, has been a Realtor since ${CAREER_START_YEAR} and has lived in Central Florida since 1999. He works in English, Hindi, Punjabi, and Urdu.`,
       knowsLanguage: languages,
       areaServed: [...areaServed],
       worksFor: { "@id": expId },

@@ -1,9 +1,5 @@
-/** First year Sanjeev worked as a Realtor. Experience is counted from this year. */
+/** First year Sanjeev worked as a Realtor. */
 export const CAREER_START_YEAR = 2014;
-
-export function yearsAsRealtor(year = new Date().getFullYear()): number {
-  return year - CAREER_START_YEAR;
-}
 
 export const socialLinks = [
   { name: "Facebook", href: "https://www.facebook.com/SanjeevMalikTeam" },

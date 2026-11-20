@@ -4,7 +4,7 @@ import { RelatedPages } from "@/components/RelatedPages";
 import { Container, CtaLinks, IconAgentBadge, NameWithCredentials, Portrait, Tagline } from "@/components/ui";
 import { communities } from "@/lib/communities";
 import { entitySummary, homeFaqs, pageMeta } from "@/lib/seo";
-import { CAREER_START_YEAR, site, yearsAsRealtor } from "@/lib/site";
+import { CAREER_START_YEAR, site } from "@/lib/site";
 
 export const metadata = pageMeta({
   title: "Lake Mary Realtor | Sanjeev Malik",
@@ -34,7 +34,7 @@ export default function HomePage() {
               Central Florida real estate, with a guide who has lived here since 1999.
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate">
-              Sanjeev Malik is a Broker Associate with eXp Realty LLC and has been a Realtor since {CAREER_START_YEAR} ({yearsAsRealtor()} years). He helps people buy, sell, and relocate in Lake Mary, Sanford, Orlando, and across Seminole, Volusia, Orange, and Osceola counties.
+              Sanjeev Malik is a Broker Associate with eXp Realty LLC and has been a Realtor since {CAREER_START_YEAR}. He helps people buy, sell, and relocate in Lake Mary, Sanford, Orlando, and across Seminole, Volusia, Orange, and Osceola counties.
             </p>
             <p className="mt-3 text-base font-semibold text-navy">{site.languages.join(" · ")}</p>
             <CtaLinks className="mt-7" />

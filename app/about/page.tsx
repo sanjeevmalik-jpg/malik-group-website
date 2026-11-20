@@ -2,7 +2,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedPages } from "@/components/RelatedPages";
 import { Container, CtaLinks, IconAgentBadge, PageHero, Portrait } from "@/components/ui";
 import { entitySummary, pageMeta } from "@/lib/seo";
-import { CAREER_START_YEAR, site, yearsAsRealtor } from "@/lib/site";
+import { CAREER_START_YEAR, site } from "@/lib/site";
 
 export const metadata = pageMeta({
   title: "About Sanjeev Malik, MBA, GRI",
@@ -25,7 +25,7 @@ export default function AboutPage() {
           {entitySummary()}
         </p>
         <p className="mt-4">
-          I am Sanjeev Malik, a Broker Associate with eXp Realty LLC. I have been a Realtor since {CAREER_START_YEAR}, {yearsAsRealtor()} years. My Florida license number is {site.license}.
+          I am Sanjeev Malik, a Broker Associate with eXp Realty LLC. I have been a Realtor since {CAREER_START_YEAR}. My Florida license number is {site.license}.
         </p>
       </PageHero>
       <Container className="grid gap-10 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:py-16">

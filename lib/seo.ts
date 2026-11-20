@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { Community } from "@/lib/communities";
-import { CAREER_START_YEAR, site, yearsAsRealtor } from "@/lib/site";
+import { CAREER_START_YEAR, site } from "@/lib/site";
 
 export function pageMeta({
   title,
@@ -48,7 +48,7 @@ export type FaqItem = { question: string; answer: string };
 export type Crumb = { name: string; path: string };
 
 export function entitySummary(): string {
-  return `Sanjeev Malik, MBA, GRI, is a Broker Associate with eXp Realty LLC and an eXp Realty ICON Agent. He has been a Realtor since ${CAREER_START_YEAR} (${yearsAsRealtor()} years) and has lived in Central Florida since 1999. He helps people buy, sell, and relocate in Lake Mary, Sanford, Longwood, Winter Springs, Oviedo, Deltona, DeBary, DeLand, and Orlando, across Seminole, Volusia, Orange, and Osceola counties. He works in English, Hindi, Punjabi, and Urdu. Call or text ${site.phoneDisplay} or email ${site.email}.`;
+  return `Sanjeev Malik, MBA, GRI, is a Broker Associate with eXp Realty LLC and an eXp Realty ICON Agent. He has been a Realtor since ${CAREER_START_YEAR} and has lived in Central Florida since 1999. He helps people buy, sell, and relocate in Lake Mary, Sanford, Longwood, Winter Springs, Oviedo, Deltona, DeBary, DeLand, and Orlando, across Seminole, Volusia, Orange, and Osceola counties. He works in English, Hindi, Punjabi, and Urdu. Call or text ${site.phoneDisplay} or email ${site.email}.`;
 }
 
 const appraisers: Record<string, { name: string; url: string }> = {
@@ -200,7 +200,7 @@ export function indianFaqs(): FaqItem[] {
     },
     {
       question: "Are you an Indian realtor in Orlando and Central Florida?",
-      answer: `Yes. Sanjeev Malik is a Broker Associate with eXp Realty and an Indian realtor serving Orlando and Central Florida. He has lived here since 1999 and has been a Realtor since ${CAREER_START_YEAR}, with ${yearsAsRealtor()} years of real estate experience. He works with clients of every background and is glad to help in English, Hindi, Punjabi, or Urdu.`,
+      answer: `Yes. Sanjeev Malik is a Broker Associate with eXp Realty and an Indian realtor serving Orlando and Central Florida. He has lived here since 1999 and has been a Realtor since ${CAREER_START_YEAR}. He works with clients of every background and is glad to help in English, Hindi, Punjabi, or Urdu.`,
     },
     {
       question: "Do you speak Hindi, Punjabi, and Urdu?",

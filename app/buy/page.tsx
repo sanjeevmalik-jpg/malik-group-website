@@ -5,7 +5,7 @@ import { RelatedPages } from "@/components/RelatedPages";
 import { Container, CtaLinks, JsonLd, PageHero } from "@/components/ui";
 import { buyFaqs, pageMeta } from "@/lib/seo";
 import { serviceSchema } from "@/lib/schema";
-import { CAREER_START_YEAR, site, yearsAsRealtor } from "@/lib/site";
+import { CAREER_START_YEAR, site } from "@/lib/site";
 
 export const metadata = pageMeta({
   title: "Buy a Home in Central Florida",
@@ -50,7 +50,7 @@ export default function BuyPage() {
         before={<Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Buy", path: "/buy" }]} />}
       >
         <p>
-          Sanjeev Malik has lived here since 1999 and has been a Realtor since {CAREER_START_YEAR} ({yearsAsRealtor()} years). Start with the listings, then tell him what the house needs to do.
+          Sanjeev Malik has lived here since 1999 and has been a Realtor since {CAREER_START_YEAR}. Start with the listings, then tell him what the house needs to do.
         </p>
       </PageHero>
       <Container className="py-12 sm:py-16">
