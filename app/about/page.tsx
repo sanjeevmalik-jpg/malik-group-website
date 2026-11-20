@@ -1,6 +1,6 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedPages } from "@/components/RelatedPages";
-import { Container, CtaLinks, IconAgentBadge, PageHero, Portrait } from "@/components/ui";
+import { AboutContactLinks, Container, CtaLinks, IconAgentBadge, PageHero, Portrait } from "@/components/ui";
 import { entitySummary, pageMeta } from "@/lib/seo";
 import { CAREER_START_YEAR, site } from "@/lib/site";
 
@@ -24,6 +24,7 @@ export default function AboutPage() {
           <strong className="text-navy">About Sanjeev Malik. </strong>
           {entitySummary()}
         </p>
+        <AboutContactLinks />
         <p className="mt-4">
           I am Sanjeev Malik, a Broker Associate with eXp Realty LLC. I have been a Realtor since {CAREER_START_YEAR}. My Florida license number is {site.license}.
         </p>

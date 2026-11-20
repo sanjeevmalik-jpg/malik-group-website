@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FaqSection } from "@/components/FaqSection";
 import { RelatedPages } from "@/components/RelatedPages";
-import { Container, CtaLinks, IconAgentBadge, NameWithCredentials, Portrait, Tagline } from "@/components/ui";
+import { AboutContactLinks, Container, CtaLinks, IconAgentBadge, NameWithCredentials, Portrait, Tagline } from "@/components/ui";
 import { communities } from "@/lib/communities";
 import { entitySummary, homeFaqs, pageMeta } from "@/lib/seo";
 import { CAREER_START_YEAR, site } from "@/lib/site";
@@ -63,6 +63,7 @@ export default function HomePage() {
         <Container className="py-10">
           <h2 className="text-3xl text-navy">About Sanjeev Malik</h2>
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate">{entitySummary()}</p>
+          <AboutContactLinks />
         </Container>
       </section>
 

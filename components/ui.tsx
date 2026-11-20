@@ -51,6 +51,44 @@ function ChatIcon() {
   );
 }
 
+function MailIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M4.5 6.25A2.25 2.25 0 0 1 6.75 4h10.5a2.25 2.25 0 0 1 2.25 2.25v11.5A2.25 2.25 0 0 1 17.25 20H6.75a2.25 2.25 0 0 1-2.25-2.25V6.25Zm1.7.9 5.8 3.87 5.8-3.87H6.2Zm11.55 1.55-6.1 4.07a1.1 1.1 0 0 1-1.2 0L4.35 8.7v9.05c0 .22.18.4.4.4h14.5a.4.4 0 0 0 .4-.4V8.7Z"
+      />
+    </svg>
+  );
+}
+
+export function AboutContactLinks({ className = "" }: { className?: string }) {
+  const item =
+    "inline-flex min-h-12 items-center gap-2 rounded-full py-2 text-base font-semibold text-navy underline decoration-orange/70 underline-offset-4";
+  return (
+    <ul className={`mt-4 flex flex-wrap gap-x-6 gap-y-1 ${className}`}>
+      <li>
+        <a href={site.phoneTel} aria-label={`Call ${site.phoneDisplay}`} className={item}>
+          <PhoneIcon />
+          Call {site.phoneDisplay}
+        </a>
+      </li>
+      <li>
+        <a href={site.smsTel} aria-label={`Text ${site.phoneDisplay}`} className={item}>
+          <ChatIcon />
+          Text {site.phoneDisplay}
+        </a>
+      </li>
+      <li>
+        <a href={`mailto:${site.email}`} aria-label={`Email ${site.email}`} className={`${item} break-all`}>
+          <MailIcon />
+          {site.email}
+        </a>
+      </li>
+    </ul>
+  );
+}
+
 export function ReachSanjeev({ className = "" }: { className?: string }) {
   return (
     <div className={`grid grid-cols-2 gap-2 ${className}`}>
