@@ -48,7 +48,13 @@ export default function HomePage() {
             </p>
             <p className="mt-1 text-base text-white/90">Broker Associate, eXp Realty</p>
             <div className="mt-2 flex justify-center">
-              <PhoneWithText tone="light" />
+              <a
+                href={site.phoneTel}
+                aria-label={`Call ${site.phoneDisplay}`}
+                className="inline-flex min-h-11 items-center text-[1.2rem] font-semibold text-white underline decoration-white/70 underline-offset-4 sm:text-2xl"
+              >
+                {site.phoneDisplay}
+              </a>
             </div>
             <Tagline tone="light" accentClassName="text-[#ffb070]" className="mt-3" />
             <div className="mt-4 flex justify-center">
