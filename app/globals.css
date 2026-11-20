@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-source), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-source-serif), Georgia, "Times New Roman", serif;
+  --color-navy: #1a365d;
+  --color-navy-deep: #10243f;
+  --color-ink: #1c2838;
+  --color-slate: #3d4d60;
+  --color-muted: #4a5b6d;
+  --color-cream: #f6f3ee;
+  --color-sand: #ebe4da;
+  --color-line: #e3dbd1;
+  --color-orange: #e07834;
+  --color-orange-deep: #9a3e14;
+  --color-white: #ffffff;
+}
+
+@keyframes hero-kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.hero-kenburns {
+  animation: hero-kenburns 15s linear infinite alternate;
+  transform-origin: center center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-kenburns {
+    animation: none;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+    font-feature-settings: "swsh" 0, "salt" 0, "ss01" 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: var(--color-navy);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-orange-deep);
+    outline-offset: 3px;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 70;
+  border-radius: 999px;
+  background: white;
+  padding: 0.6rem 1rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
