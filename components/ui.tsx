@@ -155,17 +155,27 @@ export function CtaLinks({
   searchLabel = "Search Homes",
   valueLabel = "What’s my home worth",
   className = "",
+  tone = "default",
 }: {
   searchLabel?: string;
   valueLabel?: string;
   className?: string;
+  tone?: "default" | "onDark";
 }) {
+  const primary =
+    tone === "onDark"
+      ? "inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 py-2.5 text-center text-base font-semibold text-navy transition hover:bg-cream"
+      : btnPrimary;
+  const secondary =
+    tone === "onDark"
+      ? "inline-flex min-h-11 items-center justify-center rounded-full border border-white/75 bg-white/10 px-5 py-2.5 text-center text-base font-semibold text-white transition hover:bg-white/20"
+      : btnSecondary;
   return (
     <div className={`flex flex-col gap-3 sm:flex-row sm:flex-wrap ${className}`}>
-      <a href={site.searchUrl} rel="noopener" className={btnPrimary}>
+      <a href={site.searchUrl} rel="noopener" className={primary}>
         {searchLabel}
       </a>
-      <a href={site.valuationUrl} rel="noopener" className={btnSecondary}>
+      <a href={site.valuationUrl} rel="noopener" className={secondary}>
         {valueLabel}
       </a>
     </div>
@@ -240,10 +250,12 @@ export function Tagline({
   tone = "navy",
   className = "",
   compact = false,
+  accentClassName = "text-orange",
 }: {
   tone?: "navy" | "light";
   className?: string;
   compact?: boolean;
+  accentClassName?: string;
 }) {
   const words = ["Experience", "Integrity", "Results"];
   const color = tone === "light" ? "text-white/90" : "text-navy";
@@ -253,7 +265,7 @@ export function Tagline({
       {words.map((word, index) => (
         <span key={word}>
           {word}
-          <span className="text-orange">{index < words.length - 1 ? ". " : "."}</span>
+          <span className={accentClassName}>{index < words.length - 1 ? ". " : "."}</span>
         </span>
       ))}
     </p>
