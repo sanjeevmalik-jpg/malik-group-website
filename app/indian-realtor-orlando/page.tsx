@@ -152,9 +152,9 @@ export default function IndianRealtorPage() {
           </p>
           <ul className="mt-4 grid gap-2 text-slate">
             <li>
-              <Link href="/reviews" className="font-semibold text-navy underline">
+              <a href={site.googleBusinessUrl} target="_blank" rel="noopener" className="font-semibold text-navy underline">
                 Read Google reviews
-              </Link>
+              </a>
             </li>
             <li>
               <a href={site.zillowUrl} rel="noopener" className="font-semibold text-navy underline">

@@ -29,8 +29,7 @@ export const site = {
   searchUrl: "https://sanjeevmalik.exprealty.com/",
   valuationUrl: "https://sanjeevmalik.exprealty.com/seller/valuation/",
   zillowUrl: "https://www.zillow.com/profile/SanjeevMalikTeam/",
-  googleSearchUrl:
-    "https://www.google.com/search?q=Sanjeev+Malik+eXp+Realty+Central+Florida+reviews",
+  googleBusinessUrl: "https://share.google/A8QiUrdW4lVTOQ0Uy",
   leadSource: "sanjeevmalik.com website",
   languages: ["English", "Hindi", "Punjabi", "Urdu"] as const,
   areas: [

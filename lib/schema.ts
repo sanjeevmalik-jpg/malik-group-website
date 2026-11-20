@@ -2,7 +2,7 @@ import { areaServed, CAREER_START_YEAR, site, socialLinks, yearsAsRealtor } from
 import type { Crumb, FaqItem } from "@/lib/seo";
 import { indianFaqs } from "@/lib/seo";
 
-const sameAs = [site.zillowUrl, site.searchUrl, ...socialLinks.map((link) => link.href)];
+const sameAs = [site.zillowUrl, site.googleBusinessUrl, site.searchUrl, ...socialLinks.map((link) => link.href)];
 
 const languages = site.languages.map((name) => ({
   "@type": "Language",

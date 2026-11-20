@@ -39,10 +39,10 @@ export default function ReviewsPage() {
           <p className="font-display text-5xl text-navy">165+</p>
           <h2 className="mt-3 text-2xl text-navy">Google reviews</h2>
           <p className="mt-3 leading-relaxed text-slate">
-            Sanjeev has 165+ Google reviews. A direct Google Business Profile link was not part of the verified details for this site, so the button below opens a Google search for his name and brokerage.
+            Sanjeev has 165+ Google reviews on his Google Business Profile. This page does not rewrite them.
           </p>
-          <a href={site.googleSearchUrl} rel="noopener" className={`${btnSecondary} mt-6`}>
-            Search Google reviews
+          <a href={site.googleBusinessUrl} target="_blank" rel="noopener" className={`${btnSecondary} mt-6`}>
+            Read Google reviews
           </a>
         </article>
         <div className="md:col-span-2">

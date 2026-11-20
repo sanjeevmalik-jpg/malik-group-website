@@ -1,4 +1,4 @@
-import { socialLinks } from "@/lib/site";
+import { site, socialLinks } from "@/lib/site";
 
 function Glyph({ children }: { children: React.ReactNode }) {
   return (
@@ -71,6 +71,22 @@ export function SocialLinks({ className = "" }: { className?: string }) {
           </a>
         </li>
       ))}
+      <li>
+        <a
+          href={site.googleBusinessUrl}
+          target="_blank"
+          rel="noopener"
+          aria-label="Google"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-current/20 transition hover:bg-white/10"
+        >
+          <Glyph>
+            <path d="M21.6 12.23c0-.74-.07-1.45-.19-2.14H12v4.05h5.38a4.6 4.6 0 0 1-2 3.02v2.5h3.23c1.89-1.74 2.99-4.3 2.99-7.43Z" />
+            <path d="M12 22c2.7 0 4.96-.9 6.61-2.43l-3.23-2.5c-.9.6-2.04.96-3.38.96-2.6 0-4.8-1.76-5.59-4.12H3.07v2.58A10 10 0 0 0 12 22Z" />
+            <path d="M6.41 13.91A6 6 0 0 1 6.1 12c0-.66.11-1.3.31-1.91V7.51H3.07A10 10 0 0 0 2 12c0 1.61.39 3.14 1.07 4.49l3.34-2.58Z" />
+            <path d="M12 5.97c1.47 0 2.79.5 3.83 1.5l2.87-2.87C16.95 2.99 14.7 2 12 2A10 10 0 0 0 3.07 7.51l3.34 2.58C7.2 7.73 9.4 5.97 12 5.97Z" />
+          </Glyph>
+        </a>
+      </li>
     </ul>
   );
 }
