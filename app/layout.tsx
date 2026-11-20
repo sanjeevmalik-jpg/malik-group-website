@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MobileContactBar } from "@/components/MobileContactBar";
 import { JsonLd } from "@/components/ui";
-import { siteAgentSchema } from "@/lib/schema";
+import { siteGraphSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -56,7 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
       <html lang="en" className={`${sourceSerif.variable} ${sourceSans.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col pb-[calc(4.75rem+env(safe-area-inset-bottom))] md:pb-0">
-        <JsonLd data={siteAgentSchema} />
+        <JsonLd data={siteGraphSchema} />
         <Header />
         <main id="main" className="flex-1">
           {children}

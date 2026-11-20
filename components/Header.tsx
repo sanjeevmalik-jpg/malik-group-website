@@ -37,17 +37,16 @@ export function Header() {
         <Link href="/" aria-label="Malik Group home" className="mr-auto shrink-0">
           <Image
             src="/logo-icon-trim.png"
-            alt=""
+            alt="Malik Group"
             width={649}
             height={580}
             className="h-11 w-auto sm:hidden"
           />
           <Image
             src="/logo-full-trim.png"
-            alt=""
+            alt="Malik Group"
             width={1102}
             height={305}
-            priority
             className="hidden h-12 w-auto sm:block md:h-14"
           />
         </Link>

@@ -11,7 +11,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-8 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link href="/" aria-label="Malik Group home" className="inline-flex rounded-2xl bg-white p-2.5">
-            <Image src="/logo-icon-trim.png" alt="" width={649} height={580} className="h-16 w-auto" />
+            <Image src="/logo-icon-trim.png" alt="Malik Group" width={649} height={580} className="h-16 w-auto" />
           </Link>
           <p className="mt-4 font-display text-2xl">Malik Group</p>
           <div className="mt-2">

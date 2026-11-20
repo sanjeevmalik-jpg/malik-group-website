@@ -1,13 +1,15 @@
 import Link from "next/link";
+import { FaqSection } from "@/components/FaqSection";
+import { RelatedPages } from "@/components/RelatedPages";
 import { Container, CtaLinks, IconAgentBadge, NameWithCredentials, Portrait, Tagline } from "@/components/ui";
 import { communities } from "@/lib/communities";
-import { pageMeta } from "@/lib/seo";
+import { entitySummary, homeFaqs, pageMeta } from "@/lib/seo";
 import { CAREER_START_YEAR, site, yearsAsRealtor } from "@/lib/site";
 
 export const metadata = pageMeta({
-  title: "Malik Group | Central Florida Real Estate",
+  title: "Lake Mary Realtor | Sanjeev Malik",
   description:
-    "Sanjeev Malik, Broker Associate with eXp Realty, helps buyers and sellers in Lake Mary, Sanford, Orlando, and across Central Florida. Call (321) 297-3009.",
+    "Lake Mary realtor Sanjeev Malik helps you buy, sell, or relocate in Seminole County and Central Florida. Hindi, Punjabi, and Urdu. Call (321) 297-3009.",
   path: "/",
   absolute: true,
 });
@@ -57,6 +59,13 @@ export default function HomePage() {
         </Container>
       </section>
 
+      <section className="border-t border-line bg-white">
+        <Container className="py-10">
+          <h2 className="text-3xl text-navy">About Sanjeev Malik</h2>
+          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate">{entitySummary()}</p>
+        </Container>
+      </section>
+
       <section className="bg-navy text-white" aria-label="Experience">
         <Container className="grid gap-6 py-8 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
@@ -78,22 +87,25 @@ export default function HomePage() {
                 href: "/buy",
                 title: "Buy",
                 text: "Search current homes and work through showings, the offer, and closing with someone who has been in Central Florida since 1999.",
+                link: "How buying a home works",
               },
               {
                 href: "/sell",
                 title: "Sell",
                 text: "Start with a home value, then a clear pricing conversation and a plan through closing. No promised sale price.",
+                link: "How selling a home works",
               },
               {
                 href: "/relocation",
                 title: "Relocate",
                 text: "Compare Lake Mary, Sanford, Oviedo, Deltona, and the other communities Sanjeev serves before you spend a weekend driving.",
+                link: "Relocation help in Orlando",
               },
             ].map((card) => (
               <Link key={card.href} href={card.href} className="flex flex-col rounded-3xl border border-line bg-white p-6 shadow-sm transition hover:-translate-y-0.5">
                 <h3 className="text-2xl text-navy">{card.title}</h3>
                 <p className="mt-3 flex-1 leading-relaxed text-slate">{card.text}</p>
-                <span className="mt-5 text-sm font-semibold text-orange-deep">Learn more</span>
+                <span className="mt-5 text-sm font-semibold text-orange-deep">{card.link}</span>
               </Link>
             ))}
           </div>
@@ -152,7 +164,7 @@ export default function HomePage() {
               Sanjeev works in English, Hindi, Punjabi, and Urdu. He has called Central Florida home since 1999 and welcomes clients of every background.
             </p>
             <Link href="/indian-realtor-orlando" className="mt-6 inline-flex min-h-11 items-center font-semibold text-navy underline decoration-orange underline-offset-4">
-              Read more
+              Hindi, Punjabi, and Urdu speaking realtor
             </Link>
           </div>
         </Container>
@@ -174,6 +186,10 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+      <Container className="pb-16">
+        <FaqSection items={homeFaqs()} />
+        <RelatedPages />
+      </Container>
     </>
   );
 }

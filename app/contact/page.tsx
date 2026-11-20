@@ -1,20 +1,27 @@
-import { SocialLinks } from "@/components/SocialLinks";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { LeadForm } from "@/components/LeadForm";
+import { RelatedPages } from "@/components/RelatedPages";
+import { SocialLinks } from "@/components/SocialLinks";
 import { Container, PageHero, Portrait, ReachSanjeev } from "@/components/ui";
 import { pageMeta } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export const metadata = pageMeta({
-  title: "Contact Sanjeev Malik",
+  title: "Contact a Lake Mary Realtor",
   description:
-    `Call (321) 297-3009 or email ${site.email}. Send a note to Sanjeev Malik, Broker Associate with eXp Realty.`,
+    "Contact Lake Mary realtor Sanjeev Malik at (321) 297-3009 or sanjeev.malik@gmail.com. Broker Associate, eXp Realty LLC.",
   path: "/contact",
+  absolute: true,
 });
 
 export default function ContactPage() {
   return (
     <>
-      <PageHero eyebrow="Contact" title="Call, email, or send a note.">
+      <PageHero
+        eyebrow="Contact"
+        title="Call, email, or send a note."
+        before={<Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]} />}
+      >
         <p>
           Sanjeev Malik is a licensed real estate Broker Associate with eXp Realty LLC. The brokerage does not list a public storefront on this site. Meetings are by appointment.
         </p>
@@ -50,6 +57,9 @@ export default function ContactPage() {
           </div>
         </div>
         <LeadForm sourcePage="/contact" idPrefix="contact" heading="Contact form" />
+        <div className="lg:col-span-2">
+          <RelatedPages exclude="/contact" />
+        </div>
       </Container>
     </>
   );

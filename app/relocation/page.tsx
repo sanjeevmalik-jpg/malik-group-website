@@ -1,20 +1,36 @@
 import Link from "next/link";
-import { Container, CtaLinks, PageHero } from "@/components/ui";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { FaqSection } from "@/components/FaqSection";
+import { RelatedPages } from "@/components/RelatedPages";
+import { Container, CtaLinks, JsonLd, PageHero } from "@/components/ui";
 import { communities } from "@/lib/communities";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, relocationFaqs } from "@/lib/seo";
+import { serviceSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
 
 export const metadata = pageMeta({
-  title: "Relocating to Central Florida",
+  title: "Relocation Realtor in Orlando",
   description:
-    "Moving to the Orlando area? Compare Lake Mary, Sanford, Oviedo, Deltona, and other Central Florida communities with Sanjeev Malik.",
+    "Relocation realtor for Orlando and Central Florida. Compare Lake Mary, Sanford, Oviedo, and Deltona with Sanjeev Malik. Call (321) 297-3009.",
   path: "/relocation",
+  absolute: true,
 });
 
 export default function RelocationPage() {
   return (
     <>
-      <PageHero eyebrow="Relocation" title="Moving to Central Florida, without guessing from a map.">
+      <JsonLd
+        data={serviceSchema({
+          name: "Central Florida relocation",
+          description: "Relocation help comparing Central Florida cities, scheduling showings, and buying before a move.",
+          path: "/relocation",
+        })}
+      />
+      <PageHero
+        eyebrow="Relocation"
+        title="Moving to Central Florida, without guessing from a map."
+        before={<Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Relocation", path: "/relocation" }]} />}
+      >
         <p>
           Sanjeev has lived here since 1999. If you are moving for work, or buying while you are still somewhere else, he can help you sort commute, home style, and the communities he actually serves.
         </p>
@@ -75,6 +91,8 @@ export default function RelocationPage() {
           <p className="mt-6 text-slate">Languages: {site.languages.join(", ")}.</p>
           <CtaLinks className="mt-6" />
         </section>
+        <FaqSection items={relocationFaqs()} />
+        <RelatedPages exclude="/relocation" />
       </Container>
     </>
   );

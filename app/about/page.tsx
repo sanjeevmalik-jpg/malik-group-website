@@ -1,18 +1,30 @@
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { RelatedPages } from "@/components/RelatedPages";
 import { Container, CtaLinks, IconAgentBadge, PageHero, Portrait } from "@/components/ui";
-import { pageMeta } from "@/lib/seo";
+import { entitySummary, pageMeta } from "@/lib/seo";
 import { CAREER_START_YEAR, site, yearsAsRealtor } from "@/lib/site";
 
 export const metadata = pageMeta({
-  title: "About Sanjeev Malik",
-  description: `Sanjeev Malik has lived in Central Florida since 1999 and has been a Realtor since ${CAREER_START_YEAR}. Broker Associate, eXp Realty. MBA from UCF. License BK3313715.`,
+  title: "About Sanjeev Malik, MBA, GRI",
+  description:
+    "About Sanjeev Malik, MBA, GRI, a Central Florida Realtor since 2014 with eXp Realty. English, Hindi, Punjabi, and Urdu. License BK3313715.",
   path: "/about",
+  absolute: true,
 });
 
 export default function AboutPage() {
   return (
     <>
-      <PageHero eyebrow="About" title="I have called Central Florida home since 1999.">
+      <PageHero
+        eyebrow="About"
+        title="I have called Central Florida home since 1999."
+        before={<Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "About", path: "/about" }]} />}
+      >
         <p>
+          <strong className="text-navy">About Sanjeev Malik. </strong>
+          {entitySummary()}
+        </p>
+        <p className="mt-4">
           I am Sanjeev Malik, a Broker Associate with eXp Realty LLC. I have been a Realtor since {CAREER_START_YEAR}, {yearsAsRealtor()} years. My Florida license number is {site.license}.
         </p>
       </PageHero>
@@ -52,6 +64,7 @@ export default function AboutPage() {
               I help buyers and sellers in {site.areas.join(", ")}, and throughout {site.counties.join(", ")} counties.
             </p>
             <CtaLinks className="mt-6" />
+            <RelatedPages exclude="/about" />
           </section>
         </div>
       </Container>

@@ -99,14 +99,17 @@ export function PageHero({
   eyebrow,
   title,
   children,
+  before,
 }: {
   eyebrow?: string;
   title: string;
   children?: React.ReactNode;
+  before?: React.ReactNode;
 }) {
   return (
     <header className="border-b border-line bg-white">
       <Container className="py-12 sm:py-16">
+        {before}
         {eyebrow ? (
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-orange-deep">{eyebrow}</p>
         ) : null}
@@ -187,6 +190,7 @@ export function IconAgentBadge({ className = "" }: { className?: string }) {
       alt={site.iconAgent.alt}
       width={site.iconAgent.width}
       height={site.iconAgent.height}
+      sizes="48px"
       className={className}
     />
   );

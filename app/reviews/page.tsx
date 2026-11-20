@@ -1,18 +1,25 @@
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { RelatedPages } from "@/components/RelatedPages";
 import { btnPrimary, btnSecondary, Container, PageHero } from "@/components/ui";
 import { pageMeta } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 export const metadata = pageMeta({
-  title: "Reviews",
+  title: "Sanjeev Malik Reviews on Zillow",
   description:
-    "Sanjeev Malik’s team is rated 4.9 stars from 150 Zillow reviews. He has 165+ Google reviews. Read them on the public profiles.",
+    "Read Sanjeev Malik’s public reviews: 4.9 stars from 150 Zillow reviews, and 165+ Google reviews. Malik Group does not rewrite them here.",
   path: "/reviews",
+  absolute: true,
 });
 
 export default function ReviewsPage() {
   return (
     <>
-      <PageHero eyebrow="Reviews" title="Public reviews, linked rather than rewritten.">
+      <PageHero
+        eyebrow="Reviews"
+        title="Public reviews, linked rather than rewritten."
+        before={<Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Reviews", path: "/reviews" }]} />}
+      >
         <p>
           These numbers come from public profiles. This page does not add testimonials, and it does not edit what clients wrote.
         </p>
@@ -38,6 +45,9 @@ export default function ReviewsPage() {
             Search Google reviews
           </a>
         </article>
+        <div className="md:col-span-2">
+          <RelatedPages exclude="/reviews" />
+        </div>
       </Container>
     </>
   );

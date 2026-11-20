@@ -1,20 +1,36 @@
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { FaqSection } from "@/components/FaqSection";
 import { LeadForm } from "@/components/LeadForm";
-import { btnPrimary, Container, PageHero } from "@/components/ui";
-import { pageMeta } from "@/lib/seo";
+import { RelatedPages } from "@/components/RelatedPages";
+import { btnPrimary, Container, JsonLd, PageHero } from "@/components/ui";
+import { pageMeta, sellFaqs } from "@/lib/seo";
+import { serviceSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
 
 export const metadata = pageMeta({
-  title: "Sell Your Central Florida Home",
+  title: "Sell My Home in Seminole County",
   description:
-    "Request a home value and a clear plan to sell in Central Florida with Sanjeev Malik, Broker Associate at eXp Realty.",
+    "Sell my home in Seminole County with Sanjeev Malik. A home value and a clear plan. No promised price. Call (321) 297-3009.",
   path: "/sell",
+  absolute: true,
 });
 
 export default function SellPage() {
   return (
     <>
-      <PageHero eyebrow="Sell" title="A clear plan for selling, starting with a real value.">
+      <JsonLd
+        data={serviceSchema({
+          name: "Home seller representation",
+          description: "Seller representation, pricing conversations, and home valuations in Seminole County and Central Florida.",
+          path: "/sell",
+        })}
+      />
+      <PageHero
+        eyebrow="Sell"
+        title="A clear plan for selling, starting with a real value."
+        before={<Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Sell", path: "/sell" }]} />}
+      >
         <p>
           The useful first step is a current look at what comparable homes have sold for and what is listed now. Sanjeev will not promise a sale price on this page.
         </p>
@@ -43,6 +59,10 @@ export default function SellPage() {
           heading="Tell Sanjeev about the home"
           intro="Share how to reach you and a little about the property. He will follow up by phone or email."
         />
+        <div className="lg:col-span-2">
+          <FaqSection items={sellFaqs()} />
+          <RelatedPages exclude="/sell" />
+        </div>
       </Container>
     </>
   );

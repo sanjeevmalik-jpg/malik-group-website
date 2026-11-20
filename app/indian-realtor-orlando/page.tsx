@@ -1,53 +1,34 @@
 import Link from "next/link";
 import { LeadForm } from "@/components/LeadForm";
 import { Container, CtaLinks, JsonLd, NameWithCredentials, Portrait } from "@/components/ui";
-import { indianAgentSchema, indianFaqSchema } from "@/lib/schema";
-import { pageMeta } from "@/lib/seo";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { FaqSection } from "@/components/FaqSection";
+import { RelatedPages } from "@/components/RelatedPages";
+import { indianAgentSchema } from "@/lib/schema";
+import { indianFaqs, pageMeta } from "@/lib/seo";
 import { CAREER_START_YEAR, site, yearsAsRealtor } from "@/lib/site";
 
 export const metadata = pageMeta({
-  title: "Indian Realtor in Orlando | Sanjeev Malik",
+  title: "Orlando Indian Realtor | Hindi, Urdu",
   description:
-    "Hindi- and Punjabi-speaking Indian realtor in Orlando and Central Florida. Sanjeev Malik, eXp Realty. 4.9 stars on Zillow. Call (321) 297-3009.",
+    "Orlando Indian realtor Sanjeev Malik speaks Hindi, Punjabi, Urdu, and English. Buy or sell in Central Florida. Call (321) 297-3009.",
   path: "/indian-realtor-orlando",
   absolute: true,
 });
 
-const faqs = [
-  {
-    q: "Are you an Indian realtor in Orlando and Central Florida?",
-    a: `Yes. Sanjeev Malik is a Broker Associate with eXp Realty and an Indian realtor serving Orlando and Central Florida. He has lived here since 1999 and has been a Realtor since ${CAREER_START_YEAR}, with ${yearsAsRealtor()} years of real estate experience. He works with clients of every background and is glad to help in English, Hindi, Punjabi, or Urdu.`,
-  },
-  {
-    q: "Do you speak Hindi and Punjabi?",
-    a: "Yes. Sanjeev is a Hindi speaking realtor and a Punjabi speaking realtor, and he also works in English and Urdu. You can ask questions, review offers, and walk through inspections in the language that feels most comfortable.",
-  },
-  {
-    q: "Which areas do you serve?",
-    a: "He serves Lake Mary, Sanford, Longwood, Winter Springs, Oviedo, Deltona, DeBary, DeLand, and Orlando, as well as Seminole, Volusia, Orange, and Osceola counties. If you are looking just outside those communities, reach out and he can tell you whether he can help.",
-  },
-  {
-    q: "Can you help with vastu-friendly layouts or a home for parents?",
-    a: "Yes, when that is important to you. Sanjeev can help you evaluate floor plans, orientation, and homes with space for multigenerational living, including in-law suites. He can also help you consider drive times to temples, gurdwaras, and grocery stores you care about. He will not steer you to a neighborhood based on ethnicity or who lives there.",
-  },
-  {
-    q: "Do you work with H-1B families, first-time buyers, and NRIs?",
-    a: "Yes. Sanjeev regularly helps relocating H-1B, tech, and healthcare families, first-time buyers, NRIs and investors, and sellers. If you are moving from another state or buying from overseas, he will keep the process organized and easy to follow.",
-  },
-  {
-    q: "How do I start a home search or find out what my home is worth?",
-    a: `You can search homes now, request a home value, or call or text Sanjeev at (321) 297-3009. You can also email ${site.email}.`,
-  },
-];
-
 export default function IndianRealtorPage() {
   return (
     <>
-      <JsonLd data={indianFaqSchema} />
       <JsonLd data={indianAgentSchema} />
       <header className="border-b border-line bg-white">
         <Container className="grid items-center gap-10 py-12 lg:grid-cols-[1.15fr_0.85fr] lg:py-16">
           <div>
+            <Breadcrumbs
+              items={[
+                { name: "Home", path: "/" },
+                { name: "Indian realtor", path: "/indian-realtor-orlando" },
+              ]}
+            />
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-orange-deep">
               English · Hindi · Punjabi · Urdu
             </p>
@@ -188,24 +169,17 @@ export default function IndianRealtorPage() {
           </ul>
         </section>
 
+        <FaqSection items={indianFaqs()} heading="Frequently Asked Questions" />
+        <RelatedPages exclude="/indian-realtor-orlando" />
         <section>
-          <h2 className="text-3xl text-navy">Frequently Asked Questions</h2>
-          <div className="mt-6 grid gap-3">
-            {faqs.map((item) => (
-              <details key={item.q} className="rounded-3xl bg-white p-5">
-                <summary className="cursor-pointer text-lg font-semibold text-navy">{item.q}</summary>
-                <p className="mt-3 leading-relaxed text-slate">{item.a}</p>
-              </details>
-            ))}
-          </div>
           <p className="mt-4 text-slate">
             To start,{" "}
             <a href={site.searchUrl} rel="noopener" className="font-semibold text-navy underline">
-              search homes
+              search Central Florida homes
             </a>
             , request a{" "}
             <a href={site.valuationUrl} rel="noopener" className="font-semibold text-navy underline">
-              home value
+              request a home value
             </a>
             , call or text{" "}
             <a href={site.phoneTel} className="font-semibold text-navy underline">

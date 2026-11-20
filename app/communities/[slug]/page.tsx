@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { FaqSection } from "@/components/FaqSection";
+import { NearbyCommunities, RelatedPages } from "@/components/RelatedPages";
 import { Container, CtaLinks, PhotoSlot } from "@/components/ui";
 import { communities, getCommunity } from "@/lib/communities";
-import { pageMeta } from "@/lib/seo";
+import { areaDescription, areaFaqs, areaTitle, pageMeta } from "@/lib/seo";
 
 export function generateStaticParams() {
   return communities.map((community) => ({ slug: community.slug }));
@@ -15,9 +18,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const community = getCommunity(slug);
   if (!community) return {};
   return pageMeta({
-    title: `${community.name} Real Estate`,
-    description: community.description,
+    title: areaTitle(community),
+    description: areaDescription(community),
     path: `/communities/${community.slug}`,
+    absolute: true,
   });
 }
 
@@ -37,13 +41,14 @@ export default async function CommunityPage({ params }: { params: Promise<{ slug
     <>
       <header className="border-b border-line bg-white">
         <Container className="py-12 sm:py-16">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-orange-deep">
-            <Link href="/communities" className="underline decoration-orange/60 underline-offset-4">
-              Communities
-            </Link>
-            <span aria-hidden="true"> · </span>
-            {community.county}
-          </p>
+          <Breadcrumbs
+            items={[
+              { name: "Home", path: "/" },
+              { name: "Communities", path: "/communities" },
+              { name: community.name, path: `/communities/${community.slug}` },
+            ]}
+          />
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-orange-deep">{community.county}</p>
           <h1 className="mt-3 text-4xl text-navy sm:text-5xl">{community.name}, Florida</h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate">{community.overview}</p>
         </Container>
@@ -69,10 +74,15 @@ export default async function CommunityPage({ params }: { params: Promise<{ slug
           <CtaLinks />
           <p>
             <Link href="/communities" className="font-semibold text-navy underline">
-              All communities
+              All Central Florida communities
             </Link>
           </p>
         </div>
+      </Container>
+      <Container className="pb-16">
+        <FaqSection items={areaFaqs(community)} />
+        <NearbyCommunities current={community} />
+        <RelatedPages />
       </Container>
     </>
   );

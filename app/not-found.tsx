@@ -1,4 +1,16 @@
 import { Container, CtaLinks } from "@/components/ui";
+import { pageMeta } from "@/lib/seo";
+
+export const metadata = {
+  ...pageMeta({
+    title: "Page Not Found | Malik Group",
+    description:
+      "That page is not on sanjeevmalik.com. Search homes, request a home value, or return to the Malik Group home page.",
+    path: "/404",
+    absolute: true,
+  }),
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (
