@@ -1,6 +1,7 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RelatedPages } from "@/components/RelatedPages";
-import { AboutContactLinks, Container, CtaLinks, IconAgentBadge, PageHero, Portrait } from "@/components/ui";
+import { AgentCard } from "@/components/AgentCard";
+import { AboutContactLinks, Container, CtaLinks, PageHero } from "@/components/ui";
 import { entitySummary, pageMeta } from "@/lib/seo";
 import { CAREER_START_YEAR, site } from "@/lib/site";
 
@@ -29,14 +30,8 @@ export default function AboutPage() {
           I am Sanjeev Malik, a Broker Associate with eXp Realty LLC. I have been a Realtor since {CAREER_START_YEAR}. My Florida license number is {site.license}.
         </p>
       </PageHero>
-      <Container className="grid gap-10 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:py-16">
-        <div>
-          <Portrait priority />
-          <div className="mt-4 flex items-center gap-3">
-            <IconAgentBadge className="h-12 w-auto" />
-            <p className="text-base font-semibold text-navy">eXp Realty ICON Agent</p>
-          </div>
-        </div>
+      <Container className="grid items-start gap-10 py-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:py-16">
+        <AgentCard />
         <div className="space-y-10 text-lg leading-relaxed text-slate">
           <section>
             <h2 className="text-3xl text-navy">A neighbor, and a father</h2>
