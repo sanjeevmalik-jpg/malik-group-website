@@ -32,7 +32,19 @@ export default function AboutPage() {
       </PageHero>
       <Container className="grid items-start gap-10 py-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:py-16">
         <AgentCard />
-        <div className="space-y-10 text-lg leading-relaxed text-slate">
+        <div className="space-y-10 text-lg leading-[1.7] text-slate">
+          <section>
+            <h2 className="text-3xl text-navy">A Broker Associate since 2014</h2>
+            <p className="mt-4">
+              I have been a Realtor since {CAREER_START_YEAR}. I am a Broker Associate with eXp Realty LLC, and I have received five consecutive eXp Realty ICON Agent awards. I hold an MBA and a master’s degree in engineering, and I earned the GRI designation in 2016. I work in English, Hindi, Punjabi, and Urdu.
+            </p>
+            <p className="mt-4">
+              The engineering background is how I look at a house and a contract together. I sort the property, the numbers, and the terms, then say what the choice actually is. Negotiation stays practical: what an offer says, what it leaves open, and what happens next. I help buyers, sellers, investors, and first-time buyers.
+            </p>
+            <p className="mt-4">
+              I work in {site.areas.join(", ")}, across {site.counties.join(", ")} counties. I welcome clients of every background, and I do not describe a place by who lives there.
+            </p>
+          </section>
           <section>
             <h2 className="text-3xl text-navy">A neighbor, and a father</h2>
             <p className="mt-4">
@@ -51,7 +63,7 @@ export default function AboutPage() {
           <section>
             <h2 className="text-3xl text-navy">The work so far</h2>
             <p className="mt-4">
-              With my team, I have helped 225+ families buy or sell, including 30 sales in the last 12 months. Clients have rated the team 4.9 stars from 150 reviews on Zillow, and I have 165+ Google reviews. Those reviews are public. I do not rewrite them here.
+              With my team, I have helped 225+ families buy or sell, including 30 sales in the last 12 months. Clients have rated the team 4.9 stars from 150 reviews on Zillow, and I have 160+ Google reviews. Those reviews are public. I do not rewrite them here.
             </p>
           </section>
           <section>

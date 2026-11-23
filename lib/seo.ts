@@ -48,7 +48,7 @@ export type FaqItem = { question: string; answer: string };
 export type Crumb = { name: string; path: string };
 
 export function entitySummary(): string {
-  return `Sanjeev Malik, MBA, GRI, is a Broker Associate with eXp Realty LLC and an eXp Realty ICON Agent. He has been a Realtor since ${CAREER_START_YEAR} and has lived in Central Florida since 1999. He helps people buy, sell, and relocate in Lake Mary, Sanford, Longwood, Winter Springs, Oviedo, Deltona, DeBary, DeLand, and Orlando, across Seminole, Volusia, Orange, and Osceola counties. He works in English, Hindi, Punjabi, and Urdu.`;
+  return `Sanjeev Malik, MBA, GRI, is a Broker Associate with eXp Realty LLC. He has been a Realtor since ${CAREER_START_YEAR} and has lived in Central Florida since 1999. He has received five consecutive eXp Realty ICON Agent awards. He holds an MBA and a master's degree in engineering, and he earned the GRI designation in 2016. He works in English, Hindi, Punjabi, and Urdu. He helps buyers, sellers, investors, and first-time buyers in Lake Mary, Sanford, Longwood, Winter Springs, Oviedo, Deltona, DeBary, DeLand, and Orlando, across Seminole, Volusia, Orange, and Osceola counties.`;
 }
 
 const appraisers: Record<string, { name: string; url: string }> = {

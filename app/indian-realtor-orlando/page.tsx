@@ -148,7 +148,7 @@ export default function IndianRealtorPage() {
         <section>
           <h2 className="text-3xl text-navy">Proof You Can Check</h2>
           <p className="mt-4 max-w-3xl leading-relaxed text-slate">
-            Sanjeev and his team have helped <strong>225+ families</strong> buy or sell, including <strong>30 homes in the last 12 months</strong>. Clients have rated the team <strong>4.9 stars from 150 reviews on Zillow</strong>, and Sanjeev has <strong>165+ Google reviews</strong>.
+            Sanjeev and his team have helped <strong>225+ families</strong> buy or sell, including <strong>30 homes in the last 12 months</strong>. Clients have rated the team <strong>4.9 stars from 150 reviews on Zillow</strong>, and Sanjeev has <strong>160+ Google reviews</strong>.
           </p>
           <ul className="mt-4 grid gap-2 text-slate">
             <li>
