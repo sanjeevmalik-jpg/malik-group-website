@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 export const metadata = pageMeta({
   title: "Sanjeev Malik Reviews on Zillow",
   description:
-    "Read Sanjeev Malik’s public reviews: 4.9 stars from 150 Zillow reviews, and 165+ Google reviews. Malik Group does not rewrite them here.",
+    "Read Sanjeev Malik’s public reviews: 4.9 stars from 150 Zillow reviews, and 160+ Google reviews. Malik Group does not rewrite them here.",
   path: "/reviews",
   absolute: true,
 });
@@ -36,10 +36,10 @@ export default function ReviewsPage() {
           </a>
         </article>
         <article className="rounded-3xl bg-white p-7">
-          <p className="font-display text-5xl text-navy">165+</p>
+          <p className="font-display text-5xl text-navy">160+</p>
           <h2 className="mt-3 text-2xl text-navy">Google reviews</h2>
           <p className="mt-3 leading-relaxed text-slate">
-            Sanjeev has 165+ Google reviews on his Google Business Profile. This page does not rewrite them.
+            Sanjeev has 160+ Google reviews on his Google Business Profile. A few public Zillow comments are quoted on the home page without edits. This page does not rewrite them.
           </p>
           <a href={site.googleBusinessUrl} target="_blank" rel="noopener" className={`${btnSecondary} mt-6`}>
             Read Google reviews

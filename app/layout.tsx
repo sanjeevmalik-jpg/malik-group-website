@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: "%s | Malik Group",
   },
   description:
-    "Sanjeev Malik, Broker Associate with eXp Realty, helps people buy and sell homes in Lake Mary, Sanford, Orlando, and across Central Florida.",
+    "Buy Smarter. Sell Stronger. Move With Confidence. Sanjeev Malik, Broker Associate with eXp Realty, helps people buy and sell in Central Florida.",
   applicationName: site.name,
   authors: [{ name: site.agent }],
   openGraph: {

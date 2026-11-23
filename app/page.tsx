@@ -3,6 +3,8 @@ import { FaqSection } from "@/components/FaqSection";
 import { HeroBackground } from "@/components/HeroBackground";
 import { RelatedPages } from "@/components/RelatedPages";
 import { AgentCard } from "@/components/AgentCard";
+import { CredibilityStrip } from "@/components/CredibilityStrip";
+import { Testimonials } from "@/components/Testimonials";
 import { Container, CtaLinks, EmailAddress, PhoneWithText, Tagline } from "@/components/ui";
 import { communities } from "@/lib/communities";
 import { entitySummary, homeFaqs, pageMeta } from "@/lib/seo";
@@ -15,13 +17,6 @@ export const metadata = pageMeta({
   path: "/",
   absolute: true,
 });
-
-const stats = [
-  { value: "225+", label: "Families helped", note: "Team sales" },
-  { value: "30", label: "Sales in the last 12 months", note: "Team" },
-  { value: "4.9", label: "Stars from 150 Zillow reviews", note: "Team rating" },
-  { value: "165+", label: "Google reviews", note: "Public reviews" },
-];
 
 export default function HomePage() {
   return (
@@ -37,7 +32,7 @@ export default function HomePage() {
               Central Florida real estate, with a guide who has lived here since 1999.
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-white [text-shadow:0_2px_18px_rgba(16,36,63,0.55)]">
-              Sanjeev Malik is a Broker Associate with eXp Realty LLC and has been a Realtor since {CAREER_START_YEAR}. He helps people buy, sell, and relocate in Lake Mary, Sanford, Orlando, and across Seminole, Volusia, Orange, and Osceola counties.
+              Sanjeev Malik is a Broker Associate with eXp Realty LLC and has been a Realtor since {CAREER_START_YEAR}. He has received five consecutive eXp Realty ICON Agent awards. He holds an MBA and a master’s degree in engineering, earned the GRI in 2016, and works in English, Hindi, Punjabi, and Urdu.
             </p>
             <p className="mt-3 text-base font-semibold text-white [text-shadow:0_2px_18px_rgba(16,36,63,0.55)]">{site.languages.join(" · ")}</p>
             <Tagline tone="light" accentClassName="text-[#ffb070]" className="mt-5" />
@@ -46,25 +41,24 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="border-t border-line bg-white">
-        <Container className="grid items-start gap-10 py-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:py-16">
-          <AgentCard />
-          <div>
-            <h2 className="text-3xl text-navy sm:text-4xl">About Sanjeev Malik</h2>
-            <p className="mt-4 text-lg leading-relaxed text-slate">{entitySummary()}</p>
-          </div>
-        </Container>
-      </section>
+      <CredibilityStrip />
 
-      <section className="bg-navy text-white" aria-label="Experience">
-        <Container className="grid gap-6 py-8 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat) => (
-            <div key={stat.label}>
-              <p className="font-display text-4xl text-orange">{stat.value}</p>
-              <p className="mt-1 text-base font-semibold">{stat.label}</p>
-              <p className="text-sm text-white/75">{stat.note}</p>
-            </div>
-          ))}
+      <section id="about-sanjeev" className="border-t border-line bg-white">
+        <Container className="grid items-start gap-10 py-16 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14 lg:py-20">
+          <AgentCard />
+          <div className="space-y-5 text-lg leading-[1.7] text-slate">
+            <h2 className="text-3xl text-navy sm:text-4xl">About Sanjeev Malik</h2>
+            <p>{entitySummary()}</p>
+            <p>
+              The engineering background shows up in how he reads a house and a contract. He looks at the property, the numbers, and the terms, then explains the choice in plain language. Negotiation stays practical: what the offer says, what it leaves open, and what happens next.
+            </p>
+            <p>
+              He helps people buy, sell, and invest, including first-time buyers, in {site.areas.join(", ")}, across {site.counties.join(", ")} counties. He works with clients of every background and does not describe a place by who lives there.
+            </p>
+            <p>
+              With his team he has helped 225+ families buy or sell, including 30 sales in the last 12 months. The team is rated 4.9 stars from 150 reviews on Zillow. Sanjeev has 160+ Google reviews. Those comments stay on the public profiles, and a few Zillow reviews are quoted below without edits.
+            </p>
+          </div>
         </Container>
       </section>
 
@@ -131,22 +125,10 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="py-14 sm:py-16">
+      <Testimonials />
+
+      <section className="py-16 sm:py-20">
         <Container className="grid gap-6 lg:grid-cols-2">
-          <div className="rounded-3xl bg-navy p-7 text-white sm:p-9">
-            <h2 className="text-3xl text-white">Reviews you can read yourself</h2>
-            <p className="mt-4 leading-relaxed text-white/85">
-              The team is rated 4.9 stars from 150 reviews on Zillow. Sanjeev has 165+ Google reviews. This site does not reprint private comments.
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <a href={site.zillowUrl} rel="noopener" className="inline-flex min-h-11 items-center justify-center rounded-full bg-white px-5 font-semibold text-navy">
-                Zillow profile
-              </a>
-              <Link href="/reviews" className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/30 px-5 font-semibold text-white">
-                Review links
-              </Link>
-            </div>
-          </div>
           <div className="rounded-3xl border border-orange/40 bg-[#fff8f3] p-7 sm:p-9">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-orange-deep">Languages</p>
             <h2 className="mt-3 text-3xl text-navy">An Indian realtor in Orlando and Central Florida</h2>

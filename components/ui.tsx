@@ -257,15 +257,15 @@ export function Tagline({
   compact?: boolean;
   accentClassName?: string;
 }) {
-  const words = ["Experience", "Integrity", "Results"];
+  const phrases = ["Buy Smarter", "Sell Stronger", "Move With Confidence"];
   const color = tone === "light" ? "text-white/90" : "text-navy";
-  const tracking = compact ? "tracking-[0.14em] text-[0.7rem]" : "tracking-[0.22em] text-xs sm:text-sm";
+  const tracking = compact ? "tracking-[0.08em] text-[0.68rem]" : "tracking-[0.14em] text-xs sm:text-sm";
   return (
     <p className={`font-semibold uppercase ${tracking} ${color} ${className}`}>
-      {words.map((word, index) => (
-        <span key={word}>
-          {word}
-          <span className={accentClassName}>{index < words.length - 1 ? ". " : "."}</span>
+      {phrases.map((phrase, index) => (
+        <span key={phrase}>
+          {phrase}
+          <span className={accentClassName}>{index < phrases.length - 1 ? ". " : "."}</span>
         </span>
       ))}
     </p>

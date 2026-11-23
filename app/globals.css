@@ -39,6 +39,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-size: 112.5%;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -51,6 +52,7 @@
     background: var(--color-cream);
     color: var(--color-ink);
     font-family: var(--font-sans);
+    line-height: 1.7;
   }
 
   h1,
