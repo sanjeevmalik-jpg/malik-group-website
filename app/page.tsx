@@ -2,7 +2,8 @@ import Link from "next/link";
 import { FaqSection } from "@/components/FaqSection";
 import { HeroBackground } from "@/components/HeroBackground";
 import { RelatedPages } from "@/components/RelatedPages";
-import { AboutContactLinks, Container, CtaLinks, EmailAddress, IconAgentBadge, NameWithCredentials, PhoneWithText, Portrait, Tagline } from "@/components/ui";
+import { AgentCard } from "@/components/AgentCard";
+import { Container, CtaLinks, EmailAddress, PhoneWithText, Tagline } from "@/components/ui";
 import { communities } from "@/lib/communities";
 import { entitySummary, homeFaqs, pageMeta } from "@/lib/seo";
 import { CAREER_START_YEAR, site } from "@/lib/site";
@@ -27,8 +28,8 @@ export default function HomePage() {
     <>
       <section className="relative isolate overflow-hidden bg-navy text-white">
         <HeroBackground />
-        <Container className="relative z-10 grid items-center gap-10 pt-[18vh] pb-12 lg:grid-cols-[1.1fr_0.9fr] lg:py-16">
-          <div>
+        <Container className="relative z-10 pt-[16vh] pb-14 lg:py-24">
+          <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white [text-shadow:0_2px_18px_rgba(16,36,63,0.55)]">
               Central Florida · eXp Realty
             </p>
@@ -39,38 +40,19 @@ export default function HomePage() {
               Sanjeev Malik is a Broker Associate with eXp Realty LLC and has been a Realtor since {CAREER_START_YEAR}. He helps people buy, sell, and relocate in Lake Mary, Sanford, Orlando, and across Seminole, Volusia, Orange, and Osceola counties.
             </p>
             <p className="mt-3 text-base font-semibold text-white [text-shadow:0_2px_18px_rgba(16,36,63,0.55)]">{site.languages.join(" · ")}</p>
+            <Tagline tone="light" accentClassName="text-[#ffb070]" className="mt-5" />
             <CtaLinks className="mt-7" tone="onDark" />
-          </div>
-          <div className="mx-auto w-full max-w-md text-center">
-            <Portrait />
-            <div className="mt-5 rounded-3xl bg-[#10243f]/70 px-5 py-4 backdrop-blur-md">
-              <p className="font-display text-3xl leading-tight text-white sm:text-4xl">
-                <NameWithCredentials credentialsClassName="text-white/80" />
-              </p>
-              <p className="mt-1 text-base text-white/90">Broker Associate, eXp Realty</p>
-              <div className="mt-2 flex justify-center">
-                <a
-                  href={site.phoneTel}
-                  aria-label={`Call ${site.phoneDisplay}`}
-                  className="inline-flex min-h-11 items-center text-[1.2rem] font-semibold text-white underline decoration-white/70 underline-offset-4 sm:text-2xl"
-                >
-                  {site.phoneDisplay}
-                </a>
-              </div>
-              <Tagline tone="light" accentClassName="text-[#ffb070]" className="mt-3" />
-              <div className="mt-4 flex justify-center">
-                <IconAgentBadge className="h-12 w-auto rounded-lg bg-white p-1 sm:h-14" />
-              </div>
-            </div>
           </div>
         </Container>
       </section>
 
       <section className="border-t border-line bg-white">
-        <Container className="py-10">
-          <h2 className="text-3xl text-navy">About Sanjeev Malik</h2>
-          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate">{entitySummary()}</p>
-          <AboutContactLinks />
+        <Container className="grid items-start gap-10 py-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:py-16">
+          <AgentCard />
+          <div>
+            <h2 className="text-3xl text-navy sm:text-4xl">About Sanjeev Malik</h2>
+            <p className="mt-4 text-lg leading-relaxed text-slate">{entitySummary()}</p>
+          </div>
         </Container>
       </section>
 
