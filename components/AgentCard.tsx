@@ -15,7 +15,7 @@ export function AgentCard() {
         <EmailAddress />
       </div>
       <div className="mt-4 flex items-center justify-center gap-3">
-        <IconAgentBadge className="h-12 w-auto sm:h-14" />
+        <IconAgentBadge size={140} />
         <p className="text-base font-semibold text-navy">eXp Realty ICON Agent</p>
       </div>
     </div>

@@ -272,15 +272,23 @@ export function Tagline({
   );
 }
 
-export function IconAgentBadge({ className = "" }: { className?: string }) {
+export function IconAgentBadge({
+  className = "",
+  size = 160,
+}: {
+  className?: string;
+  size?: number;
+}) {
+  const display = Math.min(size, site.iconAgent.width);
   return (
     <Image
       src={site.iconAgent.src}
       alt={site.iconAgent.alt}
       width={site.iconAgent.width}
       height={site.iconAgent.height}
-      sizes="48px"
-      className={className}
+      sizes={`${display}px`}
+      style={{ width: display, height: display }}
+      className={`shrink-0 object-contain ${className}`}
     />
   );
 }
