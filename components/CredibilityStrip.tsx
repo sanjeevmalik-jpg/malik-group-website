@@ -9,10 +9,11 @@ export function CredibilityStrip() {
     <section className="border-b border-line bg-cream py-10 sm:py-14" aria-label="Record">
       <div className="mx-auto grid w-full max-w-6xl gap-4 px-5 sm:px-8 lg:grid-cols-3">
         <a className={feature} href="#about-sanjeev">
-          <IconAgentBadge className="h-16 w-auto rounded-lg bg-white p-1" />
-          <p className="mt-4 font-display text-4xl leading-none text-white sm:text-5xl">5×</p>
-          <p className="mt-3 text-lg font-semibold">Consecutive eXp Realty ICON Agent awards</p>
-          <p className="mt-2 text-sm text-white/80">Five in a row. Specific award years are not listed here.</p>
+          <IconAgentBadge size={200} className="rounded-lg bg-white p-1" />
+          <p className="mt-4 whitespace-nowrap font-display text-lg font-semibold leading-none text-white sm:text-2xl">
+            5× Consecutive eXp
+          </p>
+          <p className="mt-3 text-lg font-semibold">Realty ICON Agent awards</p>
         </a>
         <a
           className={tile}

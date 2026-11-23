@@ -24,7 +24,7 @@ export function Footer() {
             {site.title}
           </p>
           <div className="mt-3 flex items-center gap-3">
-            <IconAgentBadge className="h-10 w-auto shrink-0 rounded-md bg-white p-1" />
+            <IconAgentBadge size={96} className="rounded-md bg-white p-1" />
             <p className="text-sm leading-relaxed text-white/85">{site.disclosure}</p>
           </div>
           <p className="mt-3 text-sm text-white/85">Florida license {site.license}</p>
