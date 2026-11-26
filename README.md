@@ -26,6 +26,10 @@ The visitor’s message is added with `PUT https://api.kvcore.com/v2/public/cont
 
 Copy `.env.example` to `.env.local` for local runs, and set `BOLDTRAIL_API_KEY` in the Vercel project. The key is read only on the server. If it is missing, or BoldTrail does not accept the contact, the visitor sees a short error and the phone number and email.
 
+## Events
+
+`/events` reads `data/events.json`. To refresh it, search organizer sites (temple, gurdwara, ISKCON Orlando, Gujarati Society of Central Florida, Eventbrite, Sulekha, Desh-Videsh) for the next 8–10 weeks. Add only events you can open on a real page. Each item needs a `sourceUrl`. Set `lastVerified` to the day you checked it, and set `lastUpdated` at the top of the file. Do not invent dates, venues, or prices. The page hides events whose date is before today in US Eastern time, and it revalidates about once a day, so a stale file will not keep showing yesterday’s listing.
+
 ## Redirects
 
 Old WordPress paths are redirected in `next.config.ts`, including with a trailing slash (Next.js normalizes the slash, then the rule matches):

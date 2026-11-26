@@ -9,6 +9,7 @@ const paths = [
   "/sell",
   "/relocation",
   "/communities",
+  "/events",
   "/indian-realtor-orlando",
   "/reviews",
   "/contact",

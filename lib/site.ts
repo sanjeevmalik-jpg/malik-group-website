@@ -62,6 +62,7 @@ export const nav = [
   { href: "/sell", label: "Sell" },
   { href: "/relocation", label: "Relocation" },
   { href: "/communities", label: "Communities" },
+  { href: "/events", label: "Events" },
   { href: "/about", label: "About" },
   { href: "/reviews", label: "Reviews" },
   { href: "/contact", label: "Contact" },
